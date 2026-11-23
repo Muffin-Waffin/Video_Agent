@@ -1,51 +1,240 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from typing import TypedDict , NotRequired
+from typing import TypedDict , NotRequired, Literal
 from langgraph.graph import StateGraph , START, END
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from rich import print
-from agents.models import VideoIdea , HighlightOutput
-from agents.script_generation.prompt import highlight_prompt
+from agents.models import VideoIdea , HighlightOutput, HighlightEvaluationModelBatch , HighlightEvaluationModel, Highlight , StoryScriptModel
+from agents.script_generation.prompt import highlight_prompt, eval_prompt, script_generation_prompt
+from langgraph.types import interrupt, Command
+from langgraph.checkpoint.memory import MemorySaver
 
 load_dotenv()
-
-llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.5)
+checkpointer = MemorySaver()
+llm = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.5)
+llm_script = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.8)
+llm_eval = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.1)
 highlight_llm = llm.with_structured_output(HighlightOutput)
+eval_llm = llm_eval.with_structured_output(HighlightEvaluationModelBatch)
+script_llm = llm_script.with_structured_output(StoryScriptModel)
+
+config = {
+    "configurable" : {
+        "thread_id" : "thread-1"
+    }
+}
 
 class ScriptState(TypedDict):
     idea :  VideoIdea
     highlights : NotRequired[HighlightOutput]
-    selected_highlight : NotRequired[int]
+    evaluated_highlights : NotRequired[HighlightEvaluationModelBatch]
+    selected_highlight : NotRequired[list[HighlightEvaluationModel]]
+    approved_highlight_id : NotRequired[int]
+    approved_highlight : NotRequired[Highlight]
+    script : NotRequired[StoryScriptModel]
+    approved_script : NotRequired[bool] = False
 
-prompt = ChatPromptTemplate.from_messages(
-    [
-        ("system" , highlight_prompt),
-        ("human" , """
-        Idea : {idea}
 
-        Generate the highlights for this idea.  
+prompt = ChatPromptTemplate.from_messages([
+    ("system", highlight_prompt),
+    ("human", """
+    ORIGINAL VIDEO IDEA:
+
+    {idea}
+
+    Generate 3-7 narrative highlights.
+
+    IMPORTANT:
+    - Every highlight must directly support the original idea.
+    - Do not introduce an unrelated secondary topic.
+    - Every highlight must contribute to the central narrative.
+    - Explain the connection to the original idea.
+    - The highlights together must form one coherent narrative arc.
     """)
-    ]
+])
+eval_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", eval_prompt),
+        ('human' , """
+            Highlights : {highlights}
+
+            these are the script highlights please evalute them.
+            """)
+        ]
 )
 
+script_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", script_generation_prompt ),
+        ("human" , """
+        Here is the 
+        Idea : {idea} , 
+        Highlight : {approved_highlight}
+        
+        your task is to generate the script for the above idea and highlight""")
+    ]
+) 
 highlight_chain = prompt | highlight_llm
+evaluation_chain = eval_prompt | eval_llm
+script_chain =  script_prompt | script_llm
 
 def generate_highlights(state : ScriptState):
-
+    
     res = highlight_chain.invoke({
-        "idea" : state.get('idea').model_dump_json(indent = 2)
+        "idea" : state.get('idea')
     })
 
     return{
         "highlights" : res
     }
 
+def validate_highlights(state : ScriptState):
 
+    res = evaluation_chain.invoke({
+        "highlights" : state.get('highlights').model_dump_json(indent= 2) 
+    })
+
+    return{
+        "evaluated_highlights" : res
+    }
+
+def select_best_highlight(state : ScriptState):
+    evaluated_highlights = state['evaluated_highlights'].evaluated_highlights
+    highlights = state['highlights'].highlights
+    # print(evaluated_highlights)
+    # print(highlights)
+    selected_highlights = []
+    for evaluated in evaluated_highlights:
+        if evaluated.overall_score >= 8:
+            for highlight in highlights:
+                if evaluated.id == highlight.id:
+                    selected_highlights.append(highlight)
+
+    return{
+        "selected_highlight" : selected_highlights
+    }
+
+def router(state : ScriptState): 
+    selected_highlights = state["selected_highlight"]
+
+    if selected_highlights:
+        return "hitl_highlight_selection"
+    else: 
+        return "END"
+
+def script_router(state : ScriptState):
+    script = state['script']
+
+    if script:
+        return "hitl_script"
+    else: 
+        return "END"    
+
+
+def hitl_highlight_selection(state: ScriptState):
+    selected_highlights = state["selected_highlight"]
+    evaluated_highlights = state["evaluated_highlights"].evaluated_highlights
+
+    # Create a lookup for evaluation scores using highlight IDs
+    evaluation_map = {
+        evaluation.id: evaluation.overall_score
+        for evaluation in evaluated_highlights
+    }
+
+    # Prepare highlights for human selection
+    highlights_for_review = [
+        {
+            "id": highlight.id,
+            "title": highlight.title,
+            "description": highlight.description,
+            "narrative_purpose": highlight.narrative_purpose,
+            "visual_description": highlight.visual_description,
+            "overall_score": evaluation_map.get(highlight.id)
+        }
+        for highlight in selected_highlights
+    ]
+
+    decision = interrupt({
+        "message": "Choose one of the following highlights to turn into a script.",
+        "highlights": highlights_for_review
+    })
+
+    # Validate the user's selection
+    approved_highlight_id = decision["approved_highlight_id"]
+
+    approved_highlight = next(
+        (
+            highlight
+            for highlight in selected_highlights
+            if highlight.id == approved_highlight_id
+        ),
+        None
+    )
+
+    if approved_highlight is None:
+        raise ValueError(
+            f"Invalid highlight ID: {approved_highlight_id}"
+        )
+
+    return {
+        "approved_highlight_id": approved_highlight_id,
+        "approved_highlight": approved_highlight
+    }
+
+def hitl_script(state: ScriptState):
+    script = state["script"]
+
+    decision = interrupt({
+        "message": "Please verify the generated script",
+        "script": script.model_dump()
+    })
+
+    approved_script = decision["approved_script"]
+
+    if isinstance(approved_script, bool):
+        approved = approved_script
+    elif isinstance(approved_script, str):
+        approved = approved_script.strip().lower() in ("y", "yes")
+    else:
+        raise ValueError("Approval must be a boolean or string")
+
+    return {
+        "approved_script": approved
+    }
+
+def genarate_script(state : ScriptState):
+
+    res = script_chain.invoke({
+        "idea" : state.get('idea'),
+        "approved_highlight" : state.get('approved_highlight').model_dump_json(indent= 2) 
+    })
+    return {
+        "script" : res
+
+    }
 graph = StateGraph(ScriptState)
 
 graph.add_node("generate_highlights" , generate_highlights)
+graph.add_node("validate_highlights", validate_highlights)
+graph.add_node("select_best_highlight" , select_best_highlight)
+graph.add_node("hitl_highlight_selection" , hitl_highlight_selection)
+graph.add_node("genarate_script" , genarate_script)
+graph.add_node("hitl_script" , hitl_script)
 
 graph.add_edge(START , "generate_highlights")
-graph.add_edge("generate_highlights",END)
+graph.add_edge("generate_highlights","validate_highlights")
+graph.add_edge("validate_highlights", "select_best_highlight")
+graph.add_conditional_edges("select_best_highlight" , router ,{
+    "hitl_highlight_selection" : "hitl_highlight_selection",
+    "END" : END
+})
+graph.add_edge("hitl_highlight_selection" , "genarate_script")
+graph.add_conditional_edges("genarate_script" , script_router ,{
+    "hitl_script" : "hitl_script",
+    "END" : END
+})
+graph.add_edge("hitl_script", END)
 
-script_agent = graph.compile()
+
+script_agent = graph.compile(checkpointer=checkpointer)
+

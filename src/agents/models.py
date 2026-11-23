@@ -69,6 +69,7 @@ class Highlight(BaseModel):
 
 
 class HighlightOutput(BaseModel):
+    original_topic: str
     central_question: str
     central_reveal: str
 
@@ -79,4 +80,42 @@ class HighlightOutput(BaseModel):
 
     narrative_arc: str
     suggested_ending: str
-    
+
+class HighlightEvaluationModel(BaseModel):
+    id : int 
+    title : str
+    concept : str 
+
+    narrative_angle : float = Field(ge=0 , le= 10)
+    hook : float = Field(ge=0 , le= 10)
+    visual_potential : float = Field(ge=0 , le= 10)
+    curiosity_score : float = Field(ge=0 , le= 10)
+    storytelling_potential : float = Field(ge=0 , le= 10)
+    production_feasibility : float = Field(ge=0 , le= 10)
+
+    overall_score: float = Field(ge=0, le=10)
+
+    strengths: list[str]
+    weaknesses: list[str]
+    suggestions: list[str]
+
+    decision: Literal["accept","reject"]
+
+class HighlightEvaluationModelBatch(BaseModel):
+    evaluated_highlights : list[HighlightEvaluationModel]
+
+
+class NarrationBeat(BaseModel):
+    beat_type: str = Field(description="Hook, setting, escalation, breaking point, consequence, explanation, or payoff.")
+    narration: str = Field(description="The exact narration belonging to this beat.")
+    purpose: str = Field(description="What this beat contributes to the story.")
+
+
+class StoryScriptModel(BaseModel):
+    title: str = Field(min_length=4,max_length=80)
+    premise: str = Field(description="A concise, one-sentence summary of the story.")
+    script: str = Field(description="Complete narration script, ready for voice generation.")
+    narration_beats: list[NarrationBeat]
+    word_count: int = Field(ge=1,description="Number of spoken words in the narration.")
+    claims: list[str] = Field(description="Factual claims that should be verified before publishing.")
+    ending_explanation: str = Field(description="Why the ending creates a satisfying payoff or callback.")

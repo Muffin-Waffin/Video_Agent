@@ -11,8 +11,8 @@ from langgraph.checkpoint.memory import MemorySaver
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
-judge_llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite' ,temperature = 0.1)
+llm = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.8)
+judge_llm = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash' ,temperature = 0.1)
 llm_structured = llm.with_structured_output(IdeaModel)
 llm_judge = judge_llm.with_structured_output(IdeaEvaluationBatch)
 checkpointer = MemorySaver()
@@ -152,5 +152,3 @@ graph.add_conditional_edges("get_selected_ideas",route_to_the_hitl, {
 graph.add_edge("human_approval", END)
 
 idea_generation_agent = graph.compile(checkpointer=checkpointer)
-
-
