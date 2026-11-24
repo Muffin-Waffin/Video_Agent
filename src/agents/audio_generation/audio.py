@@ -2,7 +2,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import START, END, StateGraph
 from typing import TypedDict, NotRequired
 from agents.models import StoryScriptModel
-from agents.audio_generation.kokoro import generate_audio
+from agents.audio_generation.kokoro_audio import generate_audio
 
 PATH = "/Users/xon/company/Video_Agent/src/agents/audio_generation/output/output.wav"
 

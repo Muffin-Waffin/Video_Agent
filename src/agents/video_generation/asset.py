@@ -9,8 +9,16 @@ from agents.video_generation.prompt import asset_list_prompt , asset_desc_prompt
 from video_stuff.guideline_loader import load_visual_guidelines
 from rich import print
 import json
+from langchain_openai import ChatOpenAI
 import asyncio
 load_dotenv()
+
+llm = ChatOpenAI(
+    model="local-model",
+    base_url="http://localhost:1235/v1",
+    api_key="lm-studio",
+    temperature=0.8,
+)
 
 
 class EntityState(TypedDict):
@@ -18,7 +26,7 @@ class EntityState(TypedDict):
     entity : NotRequired[EntityModel]
     assets : NotRequired[AssetDescBatch]
 
-llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
+# llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
 prompt = ChatPromptTemplate([
     (
         "system" , asset_list_prompt

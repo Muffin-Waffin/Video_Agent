@@ -10,11 +10,25 @@ from langgraph.types import interrupt, Command
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_groq import ChatGroq
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
+from langchain_openai import ChatOpenAI
 import os
 
 
 load_dotenv()
-checkpointer = MemorySaver()
+
+llm = ChatOpenAI(
+    model="local-model",
+    base_url="http://localhost:1235/v1",
+    api_key="lm-studio",
+    temperature=0.8,
+)
+
+llm_eval = ChatOpenAI(
+    model="local-model",
+    base_url="http://localhost:1235/v1",
+    api_key="lm-studio",
+    temperature=0.1,
+)
 # llm = ChatNVIDIA(
 #   model="nvidia/nemotron-3.5-lightning-30b-a3b",
 #   api_key=os.getenv("NVIDIA_API_KEY"), 
@@ -29,7 +43,7 @@ checkpointer = MemorySaver()
 #   top_p=0.95,
 #   max_tokens=16384
 # )
-llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
+# llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
 # llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.8 , max_tokens=15000)
 # llm = primary_llm.with_fallbacks([fallback_llm, fallback_llm_2])
 
@@ -37,7 +51,7 @@ llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
 # fallback_llm_2 = ChatGroq(model="gpt-oss-20b" , temperature=0.8)
 
 # llm_eval = ChatNVIDIA(model="nvidia/nemotron-3.5-lightning-30b-a3b", temperature=0.1, max_tokens=16384)
-llm_eval = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.1)
+# llm_eval = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.1)
 # llm_eval = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.1 , max_tokens=15000)
 
 highlight_llm = llm.with_structured_output(HighlightOutput, strict=True)
@@ -117,7 +131,7 @@ def generate_highlights(state : ScriptState):
 def validate_highlights(state : ScriptState):
 
     res = evaluation_chain.invoke({
-        "highlights" : state.get('highlights').model_dump_json(indent= 2) 
+        "highlights" : state.get('highlights').model_dump_json(indent=2)
     })
 
     return{
@@ -125,15 +139,30 @@ def validate_highlights(state : ScriptState):
     }
 
 def select_best_highlight(state : ScriptState):
-    evaluated_highlights = state['evaluated_highlights'].evaluated_highlights
-    highlights = state['highlights'].highlights
+    print(state)
+    highlights_data = state['highlights']
+    highlights = (
+        highlights_data["highlights"]
+        if isinstance(highlights_data, dict)
+        else highlights_data.highlights
+    )
+    evaluated_batch = state["evaluated_highlights"]
+
+    if isinstance(evaluated_batch, dict):
+        evaluated_highlights = evaluated_batch["evaluated_highlights"]
+    else:
+        evaluated_highlights = evaluated_batch.evaluated_highlights
     # print(evaluated_highlights)
     # print(highlights)
     selected_highlights = []
     for evaluated in evaluated_highlights:
-        if evaluated.overall_score >= 8:
+        score = evaluated["overall_score"] if isinstance(evaluated, dict) else evaluated.overall_score
+        evaluation_id = evaluated["id"] if isinstance(evaluated, dict) else evaluated.id
+
+        if score >= 8:
             for highlight in highlights:
-                if evaluated.id == highlight.id:
+                highlight_id = highlight["id"] if isinstance(highlight, dict) else highlight.id
+                if evaluation_id == highlight_id:
                     selected_highlights.append(highlight)
 
     return{
@@ -160,11 +189,20 @@ def script_router(state : ScriptState):
 def hitl_highlight_selection(state: ScriptState):
     selected_highlights = state["selected_highlight"]
     print(state)
-    evaluated_highlights = state["evaluated_highlights"].evaluated_highlights
+    evaluated_batch = state["evaluated_highlights"]
+
+    evaluated_highlights = (
+        evaluated_batch["evaluated_highlights"]
+        if isinstance(evaluated_batch, dict)
+        else evaluated_batch.evaluated_highlights
+    )
+
+
 
     # Create a lookup for evaluation scores using highlight IDs
     evaluation_map = {
-        evaluation.id: evaluation.overall_score
+        (evaluation["id"] if isinstance(evaluation, dict) else evaluation.id):
+        (evaluation["overall_score"] if isinstance(evaluation, dict) else evaluation.overall_score)
         for evaluation in evaluated_highlights
     }
 
@@ -263,5 +301,5 @@ graph.add_conditional_edges("genarate_script" , script_router ,{
 graph.add_edge("hitl_script", END)
 
 
-script_agent = graph.compile(checkpointer=checkpointer)
+script_agent = graph.compile()
 
