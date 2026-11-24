@@ -8,16 +8,25 @@
     video generation -> when agent completes the video and gives the output and user gives the revised changes
     packaging and posting aprroval 
 """
+CONFIG = {
+    "configurable": {
+        "thread_id": "video-run"
+    }
+} 
 
 from langgraph.graph import StateGraph, END , START
 from typing import TypedDict , Annotated , Literal , NotRequired 
 from rich import print
+from agents.video_generation.asset import get_asset
 from agents.ideation.idea import idea_generation_agent
 from agents.script_generation.script_agent import script_agent
-from agents.models import VideoIdea , HighlightOutput,Highlight , StoryScriptModel
+from agents.models import VideoIdea , HighlightOutput,Highlight , StoryScriptModel, EntityModel
 from langgraph.types import interrupt , Command
 from langgraph.checkpoint.memory import MemorySaver
 from agents.audio_generation.audio import audio_agent
+from langgraph.checkpoint.sqlite import SqliteSaver
+import sqlite3 
+from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 
 class StatusState(TypedDict):
     topic : str
@@ -31,7 +40,27 @@ class StatusState(TypedDict):
     generated_audio_name : NotRequired[str]
     audio_path : NotRequired[str]
     audio_duration : NotRequired[str]
+    entity : NotRequired[EntityModel]
 
+from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+
+serde = JsonPlusSerializer(
+    allowed_msgpack_modules=[
+        ("agents.models", "VideoIdea"),
+        ("agents.models", "HighlightOutput"),
+        ("agents.models", "Highlight"),
+        ("agents.models", "StoryScriptModel"),
+        ("agents.models", "EntityModel"),
+        ("agents.models", "IdeaModel"),
+        ("agents.models", "IdeaEvaluationBatch"),
+    ]
+)
+conn  = sqlite3.connect(
+    "video_pipeline.db",
+    check_same_thread=False
+)
+
+checkpointer = SqliteSaver(conn, serde=serde)
 
 def run_script_agent(state : StatusState):
     return script_agent.invoke({
@@ -43,22 +72,19 @@ graph = StateGraph(StatusState)
 graph.add_node("idea_generation" , idea_generation_agent)
 graph.add_node("script_generation", run_script_agent)
 graph.add_node("audio_generation", audio_agent)
+graph.add_node("get_asset_requirement" , get_asset)
+
 graph.add_edge(START , "idea_generation")
 graph.add_edge("idea_generation" , "script_generation")
 graph.add_edge("script_generation" , "audio_generation")
-graph.add_edge("audio_generation" , END )
-checkpointer = MemorySaver()
-config = {
-    "configurable": {
-        "thread_id": "video-001"
-    }
-} 
+graph.add_edge("audio_generation" , "get_asset_requirement" )
+graph.add_edge("get_asset_requirement" , END )
 
 workflow = graph.compile(checkpointer=checkpointer)
 topic = input("Enter the topic you want to create video about :")
 
 result = workflow.invoke({
-    "topic" : topic } , config=config)
+    "topic" : topic } , config=CONFIG)
 
 
 while "__interrupt__" in result:
@@ -80,7 +106,7 @@ while "__interrupt__" in result:
                     "approved_idea_id": approved_id
                 }
             ),
-            config=config
+            config=CONFIG
         )
 
     elif "highlights" in interrupt_data:
@@ -101,13 +127,13 @@ while "__interrupt__" in result:
                             "approved_highlight_id": approved_id
                         }
                     ),
-                    config=config
+                    config=CONFIG
                 )
     
             print(result)
 
     elif "script" in interrupt_data: 
-            print(f"Script : {result["script"]}")
+            print(f"Script : {interrupt_data["script"]['script']}")
     
             approved_script = input("\n Would you approve this script (y/n):")
     
@@ -117,7 +143,7 @@ while "__interrupt__" in result:
                         "approved_script" : approved_script
                     }
                 ), 
-                    config = config
+                    config = CONFIG
             )
     else : 
         raise({

@@ -350,4 +350,28 @@ After evaluating all ideas, provide a batch summary containing:
 
 Do not modify the original ideas. Suggestions must be separate from the original concept.
 
-Remember: Your job is to identify ideas with genuine short-form video potential, not to make every idea look good."""
+Remember: Your job is to identify ideas with genuine short-form video potential, not to make every idea look good.
+STRICT OUTPUT REQUIREMENTS:
+
+For every evaluated idea, you MUST return:
+
+1. idea_id
+2. hook_strength
+3. curiosity
+4. visual_potential
+5. storytelling
+6. originality
+7. feasibility
+8. overall_score
+9. decision
+10. strengths
+11. weaknesses
+12. suggestions
+
+IMPORTANT:
+- Never omit any field.
+- strengths, weaknesses and suggestions must always be arrays.
+- If there are no weaknesses, return an empty array [].
+- Never use null for any field.
+- Evaluate every idea in the input.
+- Return only the requested structured output."""

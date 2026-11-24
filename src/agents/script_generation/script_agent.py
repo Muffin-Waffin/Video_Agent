@@ -8,15 +8,41 @@ from agents.models import VideoIdea , HighlightOutput, HighlightEvaluationModelB
 from agents.script_generation.prompt import highlight_prompt, eval_prompt, script_generation_prompt
 from langgraph.types import interrupt, Command
 from langgraph.checkpoint.memory import MemorySaver
+from langchain_groq import ChatGroq
+from langchain_nvidia_ai_endpoints import ChatNVIDIA
+import os
+
 
 load_dotenv()
 checkpointer = MemorySaver()
-llm = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.5)
-llm_script = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.8)
-llm_eval = ChatGoogleGenerativeAI(model = 'gemini-3.6-flash', temperature = 0.1)
-highlight_llm = llm.with_structured_output(HighlightOutput)
-eval_llm = llm_eval.with_structured_output(HighlightEvaluationModelBatch)
-script_llm = llm_script.with_structured_output(StoryScriptModel)
+# llm = ChatNVIDIA(
+#   model="nvidia/nemotron-3.5-lightning-30b-a3b",
+#   api_key=os.getenv("NVIDIA_API_KEY"), 
+#   temperature=0.8,
+#   top_p=0.95,
+#   max_tokens=16384
+# )
+# llm_eval = ChatNVIDIA(
+#   model="nvidia/nemotron-3.5-lightning-30b-a3b",
+#   api_key=os.getenv("NVIDIA_API_KEY"), 
+#   temperature=0.8,
+#   top_p=0.95,
+#   max_tokens=16384
+# )
+llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
+# llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.8 , max_tokens=15000)
+# llm = primary_llm.with_fallbacks([fallback_llm, fallback_llm_2])
+
+# fallback_llm = ChatGroq(model="gpt-oss-120b" , temperature=0.8)
+# fallback_llm_2 = ChatGroq(model="gpt-oss-20b" , temperature=0.8)
+
+# llm_eval = ChatNVIDIA(model="nvidia/nemotron-3.5-lightning-30b-a3b", temperature=0.1, max_tokens=16384)
+llm_eval = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.1)
+# llm_eval = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.1 , max_tokens=15000)
+
+highlight_llm = llm.with_structured_output(HighlightOutput, strict=True)
+eval_llm = llm_eval.with_structured_output(HighlightEvaluationModelBatch, strict=True)
+script_llm = llm.with_structured_output(StoryScriptModel, strict=True)
 
 config = {
     "configurable" : {
@@ -32,7 +58,7 @@ class ScriptState(TypedDict):
     approved_highlight_id : NotRequired[int]
     approved_highlight : NotRequired[Highlight]
     script : NotRequired[StoryScriptModel]
-    approved_script : NotRequired[bool] = False
+    approved_script : NotRequired[bool]
 
 
 prompt = ChatPromptTemplate.from_messages([
@@ -133,6 +159,7 @@ def script_router(state : ScriptState):
 
 def hitl_highlight_selection(state: ScriptState):
     selected_highlights = state["selected_highlight"]
+    print(state)
     evaluated_highlights = state["evaluated_highlights"].evaluated_highlights
 
     # Create a lookup for evaluation scores using highlight IDs

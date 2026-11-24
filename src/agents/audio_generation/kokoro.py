@@ -6,6 +6,8 @@ def generate_audio(text: str):
     output_path = Path("/Users/xon/company/Video_Agent/src/agents/audio_generation/output/output.wav")
     output_path.parent.mkdir(parents=True , exist_ok= True)
 
+    print(text)
+
     with KokoroTTS.from_pretrained() as tts:
         tts.save(
             text,

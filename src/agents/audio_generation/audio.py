@@ -13,17 +13,18 @@ class AudioState(TypedDict):
     audio_duration : NotRequired[str]
 
 def get_audio(state : AudioState):
-        script = state["script"]
+        # print(state["script"])
+        script = state["script"].script
         audio = generate_audio(script)
 
         return{
             "generated_audio_name" : audio['filename'],
-            "audio_path" : audio['output_path'],
+            "audio_path" : audio['filePath'],
             "audio_duration" : audio['audio_duration']
         }
 
 graph = StateGraph(AudioState)
-graph.add_node("generate_audio",generate_audio)
+graph.add_node("generate_audio",get_audio)
 
 graph.add_edge(START, "generate_audio")
 graph.add_edge("generate_audio",END)
