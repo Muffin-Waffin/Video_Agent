@@ -152,16 +152,44 @@ class ShotModel(BaseModel):
     transition: str
 
 
-class ShotModel(BaseModel):
-    shot_id: str = Field(description="A unique identifier for the shot. Example: SHOT_001.")
-    narration: str = Field(description="The exact portion of the video narration associated with this shot. It should correspond to the relevant part of the original script.")
-    duration: float = Field(description="The estimated duration of this shot in seconds. It should be appropriate for the narration and visual action.")
-    visual_description: str = Field(description="A detailed description of everything the viewer should see in this shot, including the environment, characters, objects, their positions, composition, and atmosphere.")
-    assets_required: list[str] = Field(description="A list of asset IDs required for this shot. Only reference existing asset IDs from the provided AssetDescBatch. Do not invent new assets.")
-    camera: str = Field(description="Describe the camera framing, angle, perspective, and movement. Examples: wide shot, close-up, low angle, dolly in, tracking shot.")
-    animation: str = Field(description="Describe the visual actions and movements occurring during this shot, including character movements, object interactions, environmental changes, and visual effects.")
-    transition: str = Field(description="Describe how this shot transitions into the next shot. Examples: cut, fade, dissolve, whip pan. Use a suitable transition based on the narrative.")
+class CameraKeyframe(BaseModel):
+    frame: int
+    position: tuple[float, float, float]
+    look_at: tuple[float, float, float]
+    fov: float = 40
+    roll: float = 0
+    easing: str = "smootherstep"
 
-class ShotBatch(BaseModel):
-    shots: list[ShotModel] = Field(description="An ordered list of shots that collectively represent the complete video. Each shot should cover a specific portion of the narration, and together the shots should cover the entire script without unnecessary repetition or missing sections.")
 
+class CharacterPlacement(BaseModel):
+    asset_id: str
+    position: tuple[float, float, float]
+    scale: float = 1.0
+    expression: str = "neutral"
+    pose: str = "idle"
+    facing: str = "front"
+
+
+class ShotPlan(BaseModel):
+    shot_id: str
+    start_frame: int
+    end_frame: int
+
+    environment_id: str
+    lighting: str
+
+    camera: list[CameraKeyframe]
+    characters: list[CharacterPlacement]
+
+    actions: list[dict]
+    effects: list[str]
+    transition: str
+
+
+class VideoRenderPlan(BaseModel):
+    fps: int = 30
+    width: int = 1080
+    height: int = 1920
+
+    duration_frames: int
+    shots: list[ShotPlan]

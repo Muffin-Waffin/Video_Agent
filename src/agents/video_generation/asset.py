@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from agents.models import EntityModel , StoryScriptModel, AssetDesc, AssetDescBatch
 from typing import TypedDict, NotRequired
 from agents.video_generation.prompt import asset_list_prompt , asset_desc_prompt
-from video_stuff.guideline_loader import retrieve_visual_guidelines
+from agents.video_generation.video_stuff.guideline_loader import retrieve_visual_guidelines
 from rich import print
 import json
 from langchain_openai import ChatOpenAI
