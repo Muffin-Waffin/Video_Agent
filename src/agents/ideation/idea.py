@@ -16,19 +16,19 @@ import os
 load_dotenv()
 
 
-llm = ChatOpenAI(
-    model="local-model",
-    base_url="http://localhost:1235/v1",
-    api_key="lm-studio",
-    temperature=0.8,
-)
+# llm = ChatOpenAI(
+#     model="local-model",
+#     base_url="http://localhost:1235/v1",
+#     api_key="lm-studio",
+#     temperature=0.8,
+# )
 
-judge_llm = ChatOpenAI(
-    model="local-model",
-    base_url="http://localhost:1235/v1",
-    api_key="lm-studio",
-    temperature=0.1,
-)
+# judge_llm = ChatOpenAI(
+#     model="local-model",
+#     base_url="http://localhost:1235/v1",
+#     api_key="lm-studio",
+#     temperature=0.1,
+# )
 # llm = ChatNVIDIA(
 #   model="nvidia/nemotron-3.5-lightning-30b-a3b",
 #   api_key=os.getenv("NVIDIA_API_KEY"), 
@@ -38,14 +38,14 @@ judge_llm = ChatOpenAI(
 # )
 # llm = ChatNVIDIA(model="nvidia/nemotron-3.5-lightning-30b-a3b", temperature=0.8, max_tokens=16384)
 # llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.8 , max_tokens=15000)
-# llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
+llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
 # llm = primary_llm.with_fallbacks([fallback_llm, fallback_llm_2])
 
 # fallback_llm = ChatGroq(model="gpt-oss-120b" , temperature=0.8)
 # fallback_llm_2 = ChatGroq(model="gpt-oss-20b" , temperature=0.8)
 
 # judge_llm = ChatNVIDIA(model="nvidia/nemotron-3.5-lightning-30b-a3b", temperature=0.1, max_tokens=16384)
-# judge_llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite' ,temperature = 0.1)
+judge_llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite' ,temperature = 0.1)
 # judge_llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.1, max_tokens=15000)
 # judge_llm = ChatNVIDIA(
 #   model="nvidia/nemotron-3.5-lightning-30b-a3b",

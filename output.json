@@ -1,0 +1,138 @@
+[
+    {
+        "asset_id": "ENV_cramped_hallway",
+        "name": "Cramped Hallway",
+        "category": "environment",
+        "asset_type": "3d_model",
+        "visual_description": "A narrow 3D toon-styled indoor corridor featuring hand-painted textures with saturated colors and distinct thin black ink outlines on all 3D geometry edges and creases. The architectural surfaces showcase a stylized combination of stone masonry and wooden beams, rendered with flat color fields, subtle bevels, and hand-painted mortar seams. The lighting setup incorporates a warm key light balanced by deep blue/purple shadows, creating visible light pools and atmospheric depth with soft depth of field on the background.",
+        "reusable": true
+    },
+    {
+        "asset_id": "ENV_001",
+        "name": "giant cathedral",
+        "category": "environment",
+        "asset_type": "3d_model",
+        "visual_description": "A massive architectural giant cathedral featuring towering stone facades utilizing neutral lighter stoneHD blocks in shades of #ddd0bf, #d3c5b3, #e5d9c9, and #cabba8 with a lighter mortar. The structure includes prominent high-pitched terracotta roofs colored in warm terracotta tones #dc8872 and #c87563, and slate sections in #bdbfc6 and #9292a4. Detailed timber elements like beamHD components rendered in rich wood tones #a8743f and #9e6b39 with integrated metal iron anchorages and chains colored in #4b5468. The building surface features fine bevels, lit and shaded lips, subtle cracks on select blocks, and thick-thin plum outline aesthetics using INK #241726, maintaining a high level of detail designed for a 1024 texels per meter scale.",
+        "reusable": true
+    },
+    {
+        "asset_id": "ENV_TOWERING_HALL",
+        "name": "Towering Multi-Story Stone Hall",
+        "category": "environment",
+        "asset_type": "3d_model",
+        "visual_description": "A grand, multi-story architectural hall constructed from ashlar stone blocks in neutral lighter tones such as #ddd0bf, #d3c5b3, #e5d9c9, and #cabba8, featuring running bond patterns and a tile course structure with light mortar (#a39584). The massive structural walls incorporate subtle top bevels, bottom shades, fine hairline cracks on roughly 15 percent of the blocks, and organic speckling. Integrated structural timber elements use beamHD style timbers in rich wood tones (#a8743f, #9e6b39, #b07a44) with grain strokes, top lit lips, and iron bolted joints. Metal elements maintain a restrained luminosity with iron highlights (#4b5468) ensuring high visual fidelity.",
+        "reusable": true
+    },
+    {
+        "asset_id": "ENV_virtual_game_world_space",
+        "name": "Virtual Game World Space",
+        "category": "environment",
+        "asset_type": "3d_model",
+        "visual_description": "A stylised 3D toon environment featuring hand-painted textures, saturated colors, and distinct thin black ink outlines on all 3D geometry edges and creases using a neutral near-black ink color of #0b0a0c. The scene incorporates a dynamic two-tone lighting setup with a warm key light, cool blue and purple shadows defined by shade color vectors, and soft depth of field blurring the background elements. Atmospheric features include procedural elements like water planes with crest and trough data textures, volumetric multi-layered cloud sprites with flat bottom fades, and detailed metallic chains with precise highlight arcs. The environment dynamically transitions lighting states according to narrative beats from bright daytime blues and golden sunset hues to deep night-blue tones.",
+        "reusable": true
+    },
+    {
+        "asset_id": "ENV_sky_atmospheric_fog",
+        "name": "Sky and Atmospheric Fog",
+        "category": "environment",
+        "asset_type": "procedural",
+        "visual_description": "A procedurally generated golden hour sky and atmospheric fog system. Features a sunset gradient with a bright #ffd08a horizon that transitions smoothly to a deep mauve and indigo top (#443876) with curve parameters [0.05, 0.6, 1.0]. Includes a glowing golden sun with a bloom effect spanning 13-26 percent of the frame width at the edge. The linear aerial fog uses color #f4c68c, starting at 20 m and extending to 360 m, creating a sunset atmospheric haze and soft backlighting around scene silhouettes.",
+        "reusable": true
+    },
+    {
+        "asset_id": "CHR_PLAYER_CHARACTER",
+        "name": "Player Character",
+        "category": "living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A 3D stylized toon-shaded player character featuring a rifle-green coatee jacket in #357650 with white cross belts in #f1efe6 and pewter rifleman buttons. The character wears dark grey trousers (#3d4440), black-rimmed boots, and a shako hat with a grey body (#3a3d47), black peak, pewter badge, and green tuft (#2b7a4b). The facial features include a bright skin fill (#ffe2c2 to #ecd0b6), lidded deadpan eyes spaced 0.26W apart on the centre line, thicker tapered brows at -0.20W, and a small mouth at +0.20W without blush or catchlights. The entire model is defined by a thick-thin plum-black ink outline (#241726) with soft crescent skin shading and broad gradient torso shading designed to integrate seamlessly into a hand-painted 3D toon environment.",
+        "reusable": true
+    },
+    {
+        "asset_id": "CHR_001",
+        "name": "Video Game Developers",
+        "category": "living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A group of stylized video game developer characters rendered in a 2D-flat cartoon style within a 3D toon-shaded environment pipeline. The characters feature a thick-thin plum outline using INK #241726 where the thick side sits away from the light source and toward the ground. Faces are rendered bright with a high luma value (\u22650.85) featuring lidded deadpan default eyes positioned 0.26 W apart on the centre line, thicker tapered brows at -0.20 W, and small mouths at +0.20 W with facial features sliding 0.07-0.08 W toward the facing side. No blush, no catchlights, and zero grain. Colors utilize cream and skin tones like #f7d6b6, styled with a soft lavender or warm-tinted crescent shading on the side away from the light and broad gradients on torsos.",
+        "reusable": true
+    },
+    {
+        "asset_id": "OBJ_TINYCLOSETDOOR",
+        "name": "tiny closet door",
+        "category": "non_living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A miniature wooden closet door designed in an animated illustrative style with a thick-thin plum outline (INK #241726, variable thickness with the thick side oriented away from the light and toward the ground). The door features a clean, bright fill of off-white and cream (#fef9f6 / #e7edf5) with a high luma value (>=0.85). Surface shading includes a soft crescent shadow tint on the side away from the light, utilizing subtle lavender or warm tints, with zero grain or blush effects. Inner paneling and seam details are drawn at roughly 0.6 to 0.9 scale of the outer outline.",
+        "reusable": true
+    },
+    {
+        "asset_id": "OBJ_001",
+        "name": "Standard Wooden Door",
+        "category": "non_living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A standard wooden door constructed from vertical timber planks using the beamHD procedural style specification. Dimensions approximately 3 meters by 1 meter, composed of 7 parallel timbers in natural warm wood tones (#a8743f, #9e6b39, #b07a44) featuring subtle grain strokes with low alpha opacity for realistic texture without reading as gaps. Each timber features a single distinct joint secured by two dark iron bolts (#2f2a2a). The physical structure includes crisp top lip highlights in warm translucent tones (rgba(255,235,195,.30)) and bottom ambient shadows (rgba(60,28,8,.26)), divided by defined plank seams in dark brown (#4a2510).",
+        "reusable": true
+    },
+    {
+        "asset_id": "OBJ_hidden_portal_01",
+        "name": "Hidden Portal",
+        "category": "non_living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A mystical threshold frame integrated seamlessly into the surrounding architecture, featuring thick-thin plum outline geometry in INK #241726 with a weighted thickness variant shifting away from the light source. The structural surround is built from weathered stone blocks utilizing the stoneHD texture profile, featuring neutral lighter block palettes in sun tones, paired with a thin, light mortar inlay. The interior threshold is bound by dark iron fittings rendered in muted blue-grey iron tones, complete with painted highlight bands. The core opening of the portal emanates a deep, near-black void utilizing a neutral near-black shade #0b0a0c, edged by anti-aliased geometry lines maintaining a consistent pixel width on screen with subtle atmospheric bleeding and chroma smear.",
+        "reusable": true
+    },
+    {
+        "asset_id": "OBJ_computer_screen",
+        "name": "Computer Screen",
+        "category": "non_living_objects",
+        "asset_type": "3d_model",
+        "visual_description": "A clean, modern computer screen rendered in a stylized illustrative aesthetic with flat shading and a thick-thin plum outline (#241726). The monitor housing features a matte surface with a cream and off-white color palette (#e7edf5 to #fffcfc), utilizing a soft crescent shading falloff on the side away from the light. The display panel shows a muted brownish-gray screen color (#af9886 with a luma of 0.62) displaying subtle abstract interface elements. The asset incorporates sharp, anti-aliased world lines with a near-black neutral tone (#0b0a0c) and clean, grain-free surfaces with zero measurable texture noise, matching a consistent 2D-in-3D animated visual style.",
+        "reusable": true
+    },
+    {
+        "asset_id": "OBJ_coordinate_grid_lines",
+        "name": "coordinate grid lines",
+        "category": "non_living_objects",
+        "asset_type": "2d_graphic",
+        "visual_description": "Precision coordinate grid lines rendered in neutral near-black ink using color #0b0a0c. The lines are anti-aliased and sharp as the encode allows with a 10-90 percent rise of world lines measuring .45 px at 720p, avoiding artificial blur except where depth of field affects the background. Line widths remain nearly constant on screen across near, mid, and far distances ranging from approximately 3.36 to 2.15 px with subtle perspective scaling. Cores exhibit neutral near-black luma values with slight chromatic smearing from subsampling and atmospheric lightening on farther segments.",
+        "reusable": true
+    },
+    {
+        "asset_id": "VFX_light_rays",
+        "name": "light rays",
+        "category": "extras",
+        "asset_type": "vfx",
+        "visual_description": "Volumetric golden sun light rays designed for atmospheric bloom and haze around silhouettes. The rays feature soft anti-aliased edges matching the crisp vector style without being blurred, with a bloom glow spreading approximately 13 to 26 percent of the frame width at the frame edge. The volumetric effect integrates seamlessly with sunset color palettes consisting of pink and peach atmospheric haze, displaying no hard cel edges or specular highlights on characters, wood, or ground surfaces, maintaining strict adherence to the defined stylistic parameters.",
+        "reusable": true
+    },
+    {
+        "asset_id": "VFX_spatial_warp_effect",
+        "name": "Spatial Warp Effect",
+        "category": "extras",
+        "asset_type": "vfx",
+        "visual_description": "A dynamic spatial warp visual effect rendered with vibrant chromatic aberration channels using additive blending modes. The particle and line elements curve smoothly via quadratic paths across a 1024x1024 coordinate space, featuring independent red, green, and blue channel offsets with soft anti-aliased edges and no post-process grain.",
+        "reusable": true
+    },
+    {
+        "asset_id": "VFX_PORTAL_EDGE_GLOW",
+        "name": "Portal Edge Glow",
+        "category": "extras",
+        "asset_type": "vfx",
+        "visual_description": "A precise emissive visual effect designed for portal boundaries, featuring high dynamic range HDR color values and soft light emission. The effect incorporates a thick-thin plum outline aesthetic with ink color #241726, modulated by a cosine thickness variation. It is configured with specific bloom settings including a luminance threshold of 1.0, intensity of 0.5, and mipmap blur to achieve crisp white centers with an e-fold of approximately 30 pixels at 1080p. The glow utilizes HDR colors to cast atmospheric light and haze, matching sunset peach and pink color grades without adding unwanted specular highlights or harsh rim lighting.",
+        "reusable": true
+    },
+    {
+        "asset_id": "VFX_dust_puffs",
+        "name": "Dust Puffs",
+        "category": "extras",
+        "asset_type": "vfx",
+        "visual_description": "Stylized soft dust puffs with thick-thin plum outlines in #241726, featuring a clean white-to-cream fill of #fef9f6 and #e7edf5. Soft crescent shading on the shadow side away from the light using a lavender-tinted multiplier, with zero texture grain and no specular highlights, matching the golden sun aesthetic.",
+        "reusable": true
+    },
+    {
+        "asset_id": "VFX_speed_lines",
+        "name": "Speed Lines",
+        "category": "extras",
+        "asset_type": "vfx",
+        "visual_description": "Flat 2D cartoon sprite speed lines composited into the scene to convey fast motion. Rendered as anti-aliased lines with a neutral near-black colour (#0b0a0c) and luma 0-10. Line width maintains a nearly constant apparent thickness on screen (around 2 to 3.4 px at 720p), featuring crisp edges without artificial blurring unless affected by depth-of-field background blur.",
+        "reusable": true
+    }
+]

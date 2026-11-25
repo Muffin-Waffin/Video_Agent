@@ -1,20 +1,29 @@
-from pathlib import Path
+from dotenv import load_dotenv
+from langchain_chroma import Chroma
+from langchain_nvidia_ai_endpoints import NVIDIAEmbeddings
+import os
 
-GUIDELINES_DIR = Path("src/video_stuff/guidelines")
+load_dotenv()
 
-def load_visual_guidelines():
-    files = [
-        "STYLE_BIBLE.md",
-        "reports/characters.md",
-        "reports/depth.md",
-        "reports/lighting.md",
-        "reports/motion.md",
-        "reports/outlines.md",
-        "reports/textures.md",
-        "reports/grade.md",
-    ]
+embeddings = NVIDIAEmbeddings(
+    model="nvidia/nemotron-3.5-embed-8b",
+    api_key=os.getenv("NVIDIA_API_KEY"),
+    dimensions=768
+)
+
+vectorstore = Chroma(
+    collection_name="guidelines_nemotron_768",
+    embedding_function=embeddings,
+    persist_directory="./chroma_db"
+)
+
+
+def retrieve_visual_guidelines(query: str, k: int = 5) -> str:
+    results = vectorstore.similarity_search(
+        query,
+        k=k
+    )
 
     return "\n\n".join(
-        (GUIDELINES_DIR / file).read_text()
-        for file in files
+        doc.page_content for doc in results
     )

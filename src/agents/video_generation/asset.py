@@ -6,19 +6,19 @@ from dotenv import load_dotenv
 from agents.models import EntityModel , StoryScriptModel, AssetDesc, AssetDescBatch
 from typing import TypedDict, NotRequired
 from agents.video_generation.prompt import asset_list_prompt , asset_desc_prompt
-from video_stuff.guideline_loader import load_visual_guidelines
+from video_stuff.guideline_loader import retrieve_visual_guidelines
 from rich import print
 import json
 from langchain_openai import ChatOpenAI
 import asyncio
 load_dotenv()
 
-llm = ChatOpenAI(
-    model="local-model",
-    base_url="http://localhost:1235/v1",
-    api_key="lm-studio",
-    temperature=0.8,
-)
+# llm = ChatOpenAI(
+#     model="local-model",
+#     base_url="http://localhost:1235/v1",
+#     api_key="lm-studio",
+#     temperature=0.8,
+# )
 
 
 class EntityState(TypedDict):
@@ -26,7 +26,7 @@ class EntityState(TypedDict):
     entity : NotRequired[EntityModel]
     assets : NotRequired[AssetDescBatch]
 
-# llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
+llm = ChatGoogleGenerativeAI(model = 'gemini-3.5-flash-lite', temperature = 0.8)
 prompt = ChatPromptTemplate([
     (
         "system" , asset_list_prompt
@@ -70,7 +70,22 @@ def get_asset_list(state : EntityState):
     storyscript = state['script']
     
     res = entity_chain.invoke({
-        "guideline" : load_visual_guidelines(),
+        "guideline": retrieve_visual_guidelines(
+        query=f"""
+        Find visual production guidelines relevant to this video story.
+
+        Story:
+        {storyscript.model_dump_json(indent=2)}
+
+        Focus on:
+        - Visual style
+        - Character design
+        - Environment design
+        - Composition
+        - Animation principles
+        """,
+        k=7
+    ),
         "storyscript" : storyscript.model_dump_json(indent=2)
     })
     return{
@@ -82,7 +97,22 @@ def get_asset_desc(asset : str) -> AssetDesc:
     res =  asset_chain.invoke(
         {
             "asset_name" : asset,
-            "guideline" : load_visual_guidelines()
+            "guideline": retrieve_visual_guidelines(
+                query=f"""
+                Find visual production guidelines for designing this asset:
+
+                Asset: {asset}
+
+                Focus on:
+                - Shape and proportions
+                - Materials and textures
+                - Color palette
+                - Visual style
+                - Modeling or illustration requirements
+                - Reusability
+                """,
+                k=4
+            )
         }
     )
     return res

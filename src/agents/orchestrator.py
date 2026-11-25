@@ -20,11 +20,12 @@ from rich import print
 from agents.video_generation.asset import get_asset
 from agents.ideation.idea import idea_generation_agent
 from agents.script_generation.script_agent import script_agent
-from agents.models import VideoIdea , HighlightOutput,Highlight , StoryScriptModel, EntityModel
+from agents.models import VideoIdea , HighlightOutput,Highlight , StoryScriptModel, EntityModel, AssetDescBatch
 from langgraph.types import interrupt , Command
 from langgraph.checkpoint.memory import MemorySaver
 from agents.audio_generation.audio import audio_agent
 from langgraph.checkpoint.sqlite import SqliteSaver
+from agents.video_generation.shot_desc import get_shot
 import sqlite3 
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 
@@ -41,6 +42,8 @@ class StatusState(TypedDict):
     audio_path : NotRequired[str]
     audio_duration : NotRequired[str]
     entity : NotRequired[EntityModel]
+    assets : NotRequired[AssetDescBatch]
+
 
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 
@@ -73,12 +76,14 @@ graph.add_node("idea_generation" , idea_generation_agent)
 graph.add_node("script_generation", run_script_agent)
 graph.add_node("audio_generation", audio_agent)
 graph.add_node("get_asset_requirement" , get_asset)
+graph.add_node("get_shot" , get_shot)
 
 graph.add_edge(START , "idea_generation")
 graph.add_edge("idea_generation" , "script_generation")
 graph.add_edge("script_generation" , "audio_generation")
 graph.add_edge("audio_generation" , "get_asset_requirement" )
-graph.add_edge("get_asset_requirement" , END )
+graph.add_edge("get_asset_requirement" , "get_shot" )
+graph.add_edge("get_shot" , END)
 
 workflow = graph.compile(checkpointer=checkpointer)
 topic = input("Enter the topic you want to create video about :")

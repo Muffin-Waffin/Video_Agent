@@ -127,7 +127,7 @@ class EntityModel(BaseModel):
     extras : list[str] = Field(description="this contains the list of obejcts which you thing are not fitting in he other categories but it is needed in the video")
 
 class AssetDesc(BaseModel):
-    asset_id : str = Field(description="this will contain the id the asset is going to have. Example : OBJ_001")
+    asset_id : str = Field(description="this will contain the id the asset is going to have.")
     name : str = Field(description="this will contain the name of the asset we are going to have. Exapmle : Steel Lever")
     category : Literal['environment','living_objects','non_living_objects','extras'] = Field(description="this will contain the category of the asset we are going to have. Exapmle : non_living_objects")
     asset_type :Literal["3d_model","2d_image","2d_graphic","procedural","vfx"] = Field(description="this will contain the type of the assest we are going to have. example : 3d_model")
