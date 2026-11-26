@@ -1,0 +1,413 @@
+{
+    "shots": [
+        {
+            "shot_id": "shot_01",
+            "start_frame": 0,
+            "end_frame": 180,
+            "environment_id": "test_environment_room_001",
+            "lighting": "day",
+            "camera": [
+                {
+                    "frame": 0,
+                    "position": [
+                        0.0,
+                        1.5,
+                        4.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 180,
+                    "position": [
+                        0.0,
+                        1.5,
+                        3.2
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "polygon_avatars_001",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "neutral",
+                    "pose": "standing",
+                    "facing": "forward"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "Avatar stands still while glowing digital currency shapes float around its head."
+                }
+            ],
+            "effects": [
+                "dust_particles_01",
+                "sun_shaft_light_rays_01"
+            ],
+            "transition": "hard_cut"
+        },
+        {
+            "shot_id": "shot_02",
+            "start_frame": 180,
+            "end_frame": 360,
+            "environment_id": "test_environment_room_001",
+            "lighting": "golden",
+            "camera": [
+                {
+                    "frame": 180,
+                    "position": [
+                        -2.0,
+                        2.0,
+                        3.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 50.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 360,
+                    "position": [
+                        -1.5,
+                        1.8,
+                        2.5
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 50.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "game_developers_01",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "shocked",
+                    "pose": "seated",
+                    "facing": "forward"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "Game developer leans forward in front of an inventory script terminal, staring at the screen in disbelief."
+                }
+            ],
+            "effects": [
+                "dust_particles_01"
+            ],
+            "transition": "crossfade"
+        },
+        {
+            "shot_id": "shot_03",
+            "start_frame": 360,
+            "end_frame": 750,
+            "environment_id": "terrain_environment_01",
+            "lighting": "day",
+            "camera": [
+                {
+                    "frame": 360,
+                    "position": [
+                        0.0,
+                        3.0,
+                        6.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 40.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 750,
+                    "position": [
+                        0.0,
+                        2.0,
+                        3.5
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 40.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "polygon_avatars_001",
+                    "position": [
+                        -1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "neutral",
+                    "pose": "stroll",
+                    "facing": "right"
+                },
+                {
+                    "asset_id": "npcs_01",
+                    "position": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "neutral",
+                    "pose": "stroll",
+                    "facing": "left"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "Avatars stop wandering, approach each other, draw tiny digital shapes in the air, and trade them back and forth."
+                }
+            ],
+            "effects": [
+                "dust_particles_01"
+            ],
+            "transition": "crossfade"
+        },
+        {
+            "shot_id": "shot_04",
+            "start_frame": 750,
+            "end_frame": 1050,
+            "environment_id": "test_environment_room_001",
+            "lighting": "golden",
+            "camera": [
+                {
+                    "frame": 750,
+                    "position": [
+                        0.0,
+                        1.6,
+                        2.5
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 1050,
+                    "position": [
+                        0.0,
+                        1.6,
+                        2.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "game_developers_01",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "concerned",
+                    "pose": "standing",
+                    "facing": "forward"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "Developer interacts with the inventory script terminal as glowing red error math symbols pop up near the screen."
+                }
+            ],
+            "effects": [
+                "code_error_math_symbols_01"
+            ],
+            "transition": "crossfade"
+        },
+        {
+            "shot_id": "shot_05",
+            "start_frame": 1050,
+            "end_frame": 1350,
+            "environment_id": "terrain_environment_01",
+            "lighting": "day",
+            "camera": [
+                {
+                    "frame": 1050,
+                    "position": [
+                        0.0,
+                        2.5,
+                        5.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 1350,
+                    "position": [
+                        0.0,
+                        1.8,
+                        3.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "fov": 45.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "npcs_01",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "panicked",
+                    "pose": "stroll",
+                    "facing": "forward"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "NPCs gather polished stones from the ground, assigning arbitrary values and organizing into a chaotic market structure."
+                }
+            ],
+            "effects": [
+                "dust_particles_01"
+            ],
+            "transition": "crossfade"
+        },
+        {
+            "shot_id": "shot_06",
+            "start_frame": 1350,
+            "end_frame": 1650,
+            "environment_id": "stock_market_trading_floor_001",
+            "lighting": "golden",
+            "camera": [
+                {
+                    "frame": 1350,
+                    "position": [
+                        0.0,
+                        3.5,
+                        7.0
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.5,
+                        0.0
+                    ],
+                    "fov": 40.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                },
+                {
+                    "frame": 1650,
+                    "position": [
+                        0.0,
+                        2.5,
+                        4.5
+                    ],
+                    "look_at": [
+                        0.0,
+                        1.5,
+                        0.0
+                    ],
+                    "fov": 40.0,
+                    "roll": 0.0,
+                    "easing": "ease-out"
+                }
+            ],
+            "characters": [
+                {
+                    "asset_id": "polygon_avatars_001",
+                    "position": [
+                        -1.5,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "neutral",
+                    "pose": "standing",
+                    "facing": "right"
+                },
+                {
+                    "asset_id": "npcs_01",
+                    "position": [
+                        1.5,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0,
+                    "expression": "neutral",
+                    "pose": "standing",
+                    "facing": "left"
+                }
+            ],
+            "actions": [
+                {
+                    "description": "Avatars and NPCs operate terminal desks beneath a massive stock market ticker board displaying flashing digital prices."
+                }
+            ],
+            "effects": [
+                "dust_particles_01"
+            ],
+            "transition": "hard_cut"
+        }
+    ]
+}

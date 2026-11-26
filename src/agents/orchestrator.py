@@ -10,7 +10,7 @@
 """
 CONFIG = {
     "configurable": {
-        "thread_id": "video-run"
+        "thread_id": "testtt"
     }
 } 
 
@@ -26,6 +26,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from agents.audio_generation.audio import audio_agent
 from langgraph.checkpoint.sqlite import SqliteSaver
 from agents.video_generation.shot_desc import get_shot
+from agents.video_generation.video_generator import render_and_mux_video, video_generation_node
 import sqlite3 
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 
@@ -41,8 +42,11 @@ class StatusState(TypedDict):
     generated_audio_name : NotRequired[str]
     audio_path : NotRequired[str]
     audio_duration : NotRequired[str]
+    words_json_path : NotRequired[str]
     entity : NotRequired[EntityModel]
     assets : NotRequired[AssetDescBatch]
+    story_id : NotRequired[str]
+    final_video_path : NotRequired[str]
 
 
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
@@ -56,6 +60,8 @@ serde = JsonPlusSerializer(
         ("agents.models", "EntityModel"),
         ("agents.models", "IdeaModel"),
         ("agents.models", "IdeaEvaluationBatch"),
+        ("agents.models", "AssetDescBatch"),
+        ("agents.models", "ShotBatch"),
     ]
 )
 conn  = sqlite3.connect(
@@ -70,6 +76,12 @@ def run_script_agent(state : StatusState):
         "idea": state["approved_idea"]
     })
 
+def run_render_video(state: StatusState):
+    story_id = state.get("story_id", "BridgeShort")
+    final_path = render_and_mux_video(story_id=story_id, audio_path=state.get("audio_path"))
+    return {"final_video_path": final_path}
+
+
 graph = StateGraph(StatusState)
 
 graph.add_node("idea_generation" , idea_generation_agent)
@@ -77,19 +89,27 @@ graph.add_node("script_generation", run_script_agent)
 graph.add_node("audio_generation", audio_agent)
 graph.add_node("get_asset_requirement" , get_asset)
 graph.add_node("get_shot" , get_shot)
+graph.add_node("video_generation", video_generation_node)
+graph.add_node("render_video", run_render_video)
 
 graph.add_edge(START , "idea_generation")
 graph.add_edge("idea_generation" , "script_generation")
 graph.add_edge("script_generation" , "audio_generation")
 graph.add_edge("audio_generation" , "get_asset_requirement" )
 graph.add_edge("get_asset_requirement" , "get_shot" )
-graph.add_edge("get_shot" , END)
+graph.add_edge("get_shot" , "video_generation")
+graph.add_edge("video_generation" , "render_video")
+graph.add_edge("render_video" , END)
 
 workflow = graph.compile(checkpointer=checkpointer)
-topic = input("Enter the topic you want to create video about :")
 
-result = workflow.invoke({
-    "topic" : topic } , config=CONFIG)
+saved_state = workflow.get_state(CONFIG)
+if saved_state and saved_state.next:
+    print(f"[bold yellow]Resuming thread '{CONFIG['configurable']['thread_id']}' from {saved_state.next}...[/bold yellow]")
+    result = workflow.invoke(None, config=CONFIG)
+else:
+    topic = input("Enter the topic you want to create video about :")
+    result = workflow.invoke({"topic": topic}, config=CONFIG)
 
 
 while "__interrupt__" in result:
@@ -156,3 +176,5 @@ while "__interrupt__" in result:
         })
     
     print(result)
+
+print(StatusState)

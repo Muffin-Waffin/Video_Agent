@@ -136,7 +136,15 @@ class AssetDesc(BaseModel):
 
 class AssetDescBatch(BaseModel):
     assets : list[AssetDesc]
+    
+class AssetSelection(BaseModel):
+    available_assets: list[str] = Field(
+        description="Exact asset IDs selected from the available asset catalogue."
+    )
 
+    missing_assets: list[str] = Field(
+        description="Required entity names for which no suitable catalogue asset exists."
+    )
 class ShotModel(BaseModel):
     shot_id: str
     narration: str
@@ -177,7 +185,7 @@ class ShotPlan(BaseModel):
 
     environment_id: str
     lighting: str
-
+    # duration : int
     camera: list[CameraKeyframe]
     characters: list[CharacterPlacement]
 
@@ -185,6 +193,8 @@ class ShotPlan(BaseModel):
     effects: list[str]
     transition: str
 
+class ShotBatch(BaseModel):
+    shots : list[ShotPlan]
 
 class VideoRenderPlan(BaseModel):
     fps: int = 30

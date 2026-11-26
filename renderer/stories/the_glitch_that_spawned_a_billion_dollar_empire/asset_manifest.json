@@ -1,0 +1,329 @@
+{
+  "story_id": "the_glitch_that_spawned_a_billion_dollar_empire",
+  "assets": {
+    "furniture_kit_televisionVintage": {
+      "asset_id": "furniture_kit_televisionVintage",
+      "name": "furniture_kit_televisionVintage",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/furniture_kit_televisionVintage",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "food_kit_bag": {
+      "asset_id": "food_kit_bag",
+      "name": "food_kit_bag",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/food_kit_bag",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "food_kit_glass": {
+      "asset_id": "food_kit_glass",
+      "name": "food_kit_glass",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/food_kit_glass",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "furniture_kit_tableGlass": {
+      "asset_id": "furniture_kit_tableGlass",
+      "name": "furniture_kit_tableGlass",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/furniture_kit_tableGlass",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "furniture_kit_bookcaseOpen": {
+      "asset_id": "furniture_kit_bookcaseOpen",
+      "name": "furniture_kit_bookcaseOpen",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/furniture_kit_bookcaseOpen",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "sky_environment_procedural_001": {
+      "asset_id": "sky_environment_procedural_001",
+      "name": "Dynamic Sky Dome",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/sky_environment_procedural_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A hemispherical sky dome featuring a procedural multi-stop color gradient based on elevation and lighting conditions. For daytime, the silhouette transitions from pale blue-white at the horizon to deep cerulean blue at the zenith, complemented by soft atmospheric haze and fog. For golden hour, the gradient shifts dynamically through dusty mauve, coral, pink, and lilac stops, moving from a warm golden-peach horizon to a deep purple-indigo top. It supports interpolated color stops, atmospheric scattering, and a prominent sun disc glow with bloom effects at the frame edge."
+      }
+    },
+    "terrain_env_01": {
+      "asset_id": "terrain_env_01",
+      "name": "Terrain and Grass Bank Environment",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/terrain_env_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Natural terrain and grass bank surface featuring an organic, undulating silhouette with seamless tiling properties. Proportions are scaled to cover wide expanses with a high texel density of 256 texels per meter (1024 px per 4 m). The surface material is a vibrant, saturated grass texture exhibiting flat, broad soft variations with autocorrelation around 40 px, interspersed with sparse tufts, subtle flowers, and minimal fine noise. Color palette consists of rich natural greens with hexadecimal shades like #73b23d, #71b038, and #7dbf3f, complemented by natural lighting highlights and shadows. The visual style balances realism with procedural efficiency, designed to integrate smoothly with data texture water shaders and stone elements."
+      }
+    },
+    "desert_battlefield_env_01": {
+      "asset_id": "desert_battlefield_env_01",
+      "name": "Desert Battlefield",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/desert_battlefield_env_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An arid desert battlefield environment featuring wide open sandy dunes, sparse vegetation tufts, and atmospheric heavy fog grading into linear ink shading. The silhouette includes distant ruined towers and eroded hills that fade smoothly into the distance between 130 and 260 meters. Proportions are expansive with a flat horizon line, accented by soft ground shadow blobs for scattered objects and units. Materials are stylized with sandy terrain textures, weather-worn stone, and muted desaturated tones. Colors follow a dynamic lighting scheme transitioning from warm golden hour hues (#ffd08a) to neutral daylight grey-blue tones, with dense distance fog matching atmospheric depth values."
+      }
+    },
+    "env_museum_display_room_01": {
+      "asset_id": "env_museum_display_room_01",
+      "name": "Museum Display Room",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/env_museum_display_room_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A 3D toon-styled museum display room featuring hand-painted textures, saturated colors, and distinctive thin black ink outlines on all geometric edges and creases. The silhouette consists of boxy exhibition walls with warm top-left wall sconces casting soft glows, overhead bare bulbs creating distinct circular pools of light on the floor, and a large green wall highlighted by a vibrant yellow sun patch. The color palette utilizes rich saturated tones with warm key lighting and contrasting blue-purple shadow accents. It is designed with soft depth of field on the background elements, making it fully reusable for stylized animated interior scenes."
+      }
+    },
+    "soldier_rifleman_01": {
+      "asset_id": "soldier_rifleman_01",
+      "name": "Uniformed Soldier Rifleman",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/soldier_rifleman_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An adult uniformed soldier with an adult build, featuring a height of 3.5 head-heights and a torso width of 189 units. The silhouette includes a low-sitting flat-bottom trapezoidal shako hat covering the top 30 percent of the head, dot hands on thin arms holding a 22-unit tubular rifle, and crossed cross-belts over the torso. The clothing details consist of 4 brass dot buttons, a dark belt with a small buckle, a soft cap style, and a collar, rendered with flat fills and thin inner lines."
+      }
+    },
+    "living_objects_museum_visitor_01": {
+      "asset_id": "living_objects_museum_visitor_01",
+      "name": "Museum Visitor",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/living_objects_museum_visitor_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A stylized human visitor silhouette designed for procedural generation featuring configurable builds such as adult, stout, or kid variations. The model uses structured planar lighting profiles with a controlled linear luminance gradient across the head and upper body. Materials utilize MeshLambert configurations with adjusted emissive intensity to achieve target luma ranges of approximately 0.85 when lit and 0.75 in shaded areas. Features integrated support for directional facing states, seed-based procedural variations, and painted crescent form detailing suited for real-time 3D and Canvas2D environments."
+      }
+    },
+    "vintage_handheld_video_game_system_01": {
+      "asset_id": "vintage_handheld_video_game_system_01",
+      "name": "Vintage Handheld Video Game System",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/vintage_handheld_video_game_system_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A retro handheld video game system featuring a chunky, rounded rectangular plastic silhouette with a vertical orientation. Proportions include a lower-third horizontal control pad with a directional cross and two round action buttons, and an upper-third recessed monochromatic pixel screen bordered by a thick bezel. The casing utilizes a matte textured plastic material with warm gray and accent maroon colors, complemented by thin black ink outlines on edges and creases to match a stylized toon aesthetic. Key details include a speaker grille slit, a small power switch, and a battery compartment hump on the reverse side."
+      }
+    },
+    "non_living_backpack_01": {
+      "asset_id": "non_living_backpack_01",
+      "name": "Backpack",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/non_living_backpack_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A sturdy, canvas hiking backpack featuring an asymmetrical silhouette with a main compartment, a secondary front zipper pouch, and dual side mesh pockets for water bottles. Proportions are slightly bulky yet compact, fitting comfortably against a character's back with adjustable padded shoulder straps and a heavy-duty waist belt. The primary material is durable, matte olive-green fabric complemented by dark brown leather accent patches, weathered metallic brass zippers, and nylon webbing straps. Key details include double-stitched seams, drawcord closure under the top flap, and subtle surface grain texture suitable for stylized rendering."
+      }
+    },
+    "non_living_objects_shrapnel_001": {
+      "asset_id": "non_living_objects_shrapnel_001",
+      "name": "Shrapnel",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/non_living_objects_shrapnel_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Jagged, razor-sharp metallic fragment with irregular proportions and sharp tearing edges. Features a metallic surface with dark weathering, scratches, and slight rust tints. Silhouette is asymmetrical and spiky with distinct creases suited for distinct ink outlines. Fully reusable across combat and explosion environments."
+      }
+    },
+    "artillery_shell_01": {
+      "asset_id": "artillery_shell_01",
+      "name": "Artillery Shell",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/artillery_shell_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An elongated cylindrical artillery shell with a tapered ogive nose cone and a flat base containing a driving band groove. Proportions are balanced for a medium-caliber ordnance, featuring a smooth metallic body with clean contour lines. Material is rendered in painted iron using the reference color M.iron #4b5468, avoiding pure black tones to maintain visible metallic sheen and surface gradients under light. Key details include subtle machined seams, a contrasting copper driving band near the base, and painted highlight bands to define its metallic form. Designed with clean world-space geometry suitable for standard ink outlines and procedural generation."
+      }
+    },
+    "abs_plastic_shell_01": {
+      "asset_id": "abs_plastic_shell_01",
+      "name": "ABS plastic shell",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/abs_plastic_shell_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An ABS plastic shell featuring a clean, contoured silhouette with smooth rounded edges and hollow interior structure. Proportions are compact and ergonomic, designed with subtle curvature and precise molded panel lines. The surface is fabricated from durable polymer material with a semi-matte finish, devoid of photographic grain. Colors utilize flat color fields with gentle broad shifts and thin, crisp dark ink outlines defining the outer contours and feature creases, adhering to a hand-painted illustrative style."
+      }
+    },
+    "rubber_dampening_pads_01": {
+      "asset_id": "rubber_dampening_pads_01",
+      "name": "Rubber Dampening Pads",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/rubber_dampening_pads_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Low-profile rectangular rubber dampening pad with a flat square silhouette, chamfered edges, and a subtly grooved anti-slip waffle pattern on the top and bottom surfaces. Proportions are thin and flat, designed to sit underneath heavy machinery or furniture feet. The material is matte industrial black rubber with minor worn greyish damp patches and scuffs, featuring sharp ink-line contact shadows at the base without modern screen-space ambient occlusion."
+      }
+    },
+    "non_living_glass_display_01": {
+      "asset_id": "non_living_glass_display_01",
+      "name": "Glass Display",
+      "category": "non_living_objects",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/non_living_glass_display_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A rectangular glass display case featuring a gradient blue-indigo glass texture ranging from light steel blue to deeper indigo, accented by diagonal white glints and optional decorative top-corner curtains in soft pastel hues like pale pink, cream, or muted green. The silhouette is crisp and rectilinear with clean procedural lines, suitable for showcasing items behind a semi-transparent glossy surface."
+      }
+    },
+    "multi_layered_circuit_boards_001": {
+      "asset_id": "multi_layered_circuit_boards_001",
+      "name": "Multi-Layered Circuit Boards",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/multi_layered_circuit_boards_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Flat, rectangular multi-layered circuit board featuring a rigid fiberglass substrate in deep green or dark brown, embedded with intricate interwoven traces of polished copper. The silhouette is strictly geometric with sharp 90-degree corners and standardized mounting screw holes at the edges. Surface details include dense arrangements of micro-components such as surface-mount resistors, multi-pin IC chips in black epoxy packages, gold-plated edge connectors, and subtle silkscreen reference markers in white text. The color palette combines dark saturated substrate bases with reflective metallic copper tracks and glossy black component blocks, rendered in a clean, high-precision technical style."
+      }
+    },
+    "non_living_objects_museum_display_case_001": {
+      "asset_id": "non_living_objects_museum_display_case_001",
+      "name": "Museum Display Case",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/non_living_objects_museum_display_case_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A classic museum display case featuring a rectangular vertical silhouette with clean geometric proportions. It consists of a dark matte-finished wooden or brushed metal base cabinet supporting a large, transparent glass vitrine on top for exhibiting artifacts. The frame is constructed with thin, dark metal or dark wood trim outlining the glass panels. The materials combine clear, highly transparent glass with subtle reflections, a solid matte dark base structure, and a flat hand-painted visual style featuring thin dark outlines. The color palette utilizes neutral dark tones for the structure like charcoal gray or deep walnut brown, contrasted with the neutral clear glass. Key details include a discreet locking mechanism on the glass door and an integrated warm interior lighting strip at the top. The asset is highly reusable for exhibition, historical, or gallery environments."
+      }
+    },
+    "tetris_game_001": {
+      "asset_id": "tetris_game_001",
+      "name": "Tetris game",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/tetris_game_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A classic retro-styled Tetris arcade machine silhouette featuring a vertical rectangular cabinet with a sloping control deck and a glowing screen housing colorful interlocking geometric tetromino blocks made of matte plastic materials with distinct grid lines, bold primary and secondary colors, and clean stylized edges suitable for procedural generation."
+      }
+    },
+    "dust_extras_01": {
+      "asset_id": "dust_extras_01",
+      "name": "Dust Particles",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/dust_extras_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Scattered camera-facing billboard particles and faint atmospheric motes. The silhouette consists of soft, organic, amorphous point clouds with irregular opacity falloff. Proportions are minute and dispersed across the volume to create subtle depth without cluttering the scene. Materials are emissive or translucent particle planes assigned to the NOINK layer to prevent unwanted inked outlines. Colors feature muted grey and warm dust tones blending smoothly into the air. Reusable across multiple outdoor and interior atmospheric scenes."
+      }
+    },
+    "heat_haze_01": {
+      "asset_id": "heat_haze_01",
+      "name": "Heat Haze",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/heat_haze_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Atmospheric volumetric heat haze and golden sunset glow effect, spanning 13 to 26 percent of frame width at the frame edge. Features soft pink and peach color gradients matching sunset distance hues, blending seamlessly into silhouettes with luminous bloom effects and no sharp rim lines."
+      }
+    },
+    "shockwave_extra_01": {
+      "asset_id": "shockwave_extra_01",
+      "name": "Shockwave",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/shockwave_extra_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An energetic impact shockwave effect featuring a clean circular expansion silhouette with sharp line work. Proportions are flat and planar, designed to emanate rapidly outward from a point of contact without squash, stretch, or smear artifacts. The material is stylized with crisp solid outlines and zero line boil, maintaining a sharp vector-like graphic quality. Colors consist of high-contrast monochrome or flat tones fitting a hand-drawn 2D aesthetic, highly reusable for dynamic combat impacts."
+      }
+    },
+    "explosion_fire_vfx_01": {
+      "asset_id": "explosion_fire_vfx_01",
+      "name": "Explosion Fire",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/explosion_fire_vfx_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A dynamic volumetric explosion and fire effect featuring a chaotic, expanding spherical silhouette with jagged protruding tongues of flame. Proportions are centered around an intensely bright core that tapers outward into wispy smoke and embers. Materials utilize high-dynamic-range emissive properties with bright core color values of [3.0, 2.6, 2.0] for intense white-hot centers and vibrant orange-yellow gradients for the outer flames, complemented by flat halo sprites for realistic light blooming, optimized with specific luminance thresholds and smoothing for atmospheric glow."
+      }
+    },
+    "smoke_card_01": {
+      "asset_id": "smoke_card_01",
+      "name": "Smoke",
+      "category": "extras",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/smoke_card_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Camera-facing billboard smoke card featuring an organic, billowy silhouette with soft edges and volumetric puff proportions. The material is a flat, semi-transparent particle plane styled for non-ink rendering, featuring shaded grey tones in shadow (#ae9786) and warm orange-brown undertones in highlighted areas (#bd7c48, #a46d41) with an emissive base value of 0.36 for a flat, pasted-on appearance."
+      }
+    },
+    "glow_screen_light_01": {
+      "asset_id": "glow_screen_light_01",
+      "name": "glowing screen light",
+      "category": "extras",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_spawned_a_billion_dollar_empire/assets/glow_screen_light_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A flat, emissive screen light element with a flat silhouette and subtle grey shading (#ae9786), featuring over-orange and dark golden tones (#bd7c48, #a46d41). The asset incorporates an emissive value of 0.36 for a flat, pasted-on look and utilizes specific bloom settings with a luminance threshold of 1.0, intensity of 0.5, and mipmap blur to achieve controlled internal glow and soft edge falloff."
+      }
+    }
+  }
+}

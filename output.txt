@@ -1,0 +1,365 @@
+{
+    'script': {
+        'title': 'The Glitch That Built a God-Gun',
+        'premise': 'A programming oversight intended to crash a retro video game instead bypassed memory limits to create an infinite damage weapon.',
+        'script': 'This tiny coding mistake was supposed to crash the game, but instead, it created an infinite damage cannon. It is the late twentieth century, and 
+players exploring a retro virtual world stumble into a bizarre computational blind spot. The game engine tries to read a memory register sitting far outside its legal 
+boundaries. Normally, this severe oversight triggers an immediate, hard system crash. But through pure digital coincidence, the missing boundary check allows garbage 
+data to spill directly into the active weapon payload slot. Players quickly realize that firing this corrupted item does not freeze the screen. Instead, it multiplies 
+numerical values endlessly with every single frame. The damage counter overflows, shattering health bars and turning ordinary characters into screen-clearing 
+powerhouses. You see, computers rely on strict numerical limits, much like an odometer that rolls back over to zero after reaching its maximum. When the game forced 
+the overflowed register into the weapon stats, it looped the numbers straight into maximum capacity. The game designers patched the engine years ago, but the legendary
+weapon remains embedded in digital folklore as the ultimate accidental super weapon.',
+        'narration_beats': [
+            {
+                'beat_type': 'Hook',
+                'narration': 'This tiny coding mistake was supposed to crash the game, but instead, it created an infinite damage cannon.',
+                'purpose': 'Grab attention immediately with the paradox of a crash turning into a super weapon.'
+            },
+            {
+                'beat_type': 'Setting',
+                'narration': 'It is the late twentieth century, and players exploring a retro virtual world stumble into a bizarre computational blind spot.',
+                'purpose': 'Establish the retro gaming setting and the context of the discovery.'
+            },
+            {
+                'beat_type': 'Escalation',
+                'narration': 'The game engine tries to read a memory register sitting far outside its legal boundaries. Normally, this severe oversight triggers an 
+immediate, hard system crash.',
+                'purpose': 'Explain the technical cause and what was supposed to happen.'
+            },
+            {
+                'beat_type': 'Breaking Point',
+                'narration': 'But through pure digital coincidence, the missing boundary check allows garbage data to spill directly into the active weapon payload 
+slot.',
+                'purpose': 'Show the precise moment the system failure mutates into an exploit.'
+            },
+            {
+                'beat_type': 'Consequence',
+                'narration': 'Players quickly realize that firing this corrupted item does not freeze the screen. Instead, it multiplies numerical values endlessly 
+with every single frame. The damage counter overflows, shattering health bars and turning ordinary characters into screen-clearing powerhouses.',
+                'purpose': 'Show the chaotic and overpowered results of the glitch in action.'
+            },
+            {
+                'beat_type': 'Explanation',
+                'narration': 'You see, computers rely on strict numerical limits, much like an odometer that rolls back over to zero after reaching its maximum. When 
+the game forced the overflowed register into the weapon stats, it looped the numbers straight into maximum capacity.',
+                'purpose': 'Clarify the memory overflow concept using an everyday analogy.'
+            },
+            {
+                'beat_type': 'Payoff',
+                'narration': 'The game designers patched the engine years ago, but the legendary weapon remains embedded in digital folklore as the ultimate accidental
+super weapon.',
+                'purpose': 'Provide a memorable conclusion looping back to the opening hook.'
+            }
+        ],
+        'word_count': 217,
+        'claims': [
+            'A memory boundary check failed in the retro game engine.',
+            'The error code was designed to trigger a crash.',
+            'Numerical overflow created massive damage values in retro game programming.'
+        ],
+        'ending_explanation': 'The ending creates a satisfying payoff by contrasting the temporary nature of software patches with the permanent legacy of the glitch 
+in gaming culture, bringing the narrative full circle back to the opening hook about the infinite damage cannon.'
+    },
+    'entity': EntityModel(
+        environment=['retro virtual world landscape', 'computational blind spot environment', 'digital sky', 'retro gaming world horizon'],
+        living_objects=['retro video game players', 'ordinary characters', 'screen-clearing powerhouses', 'game designers'],
+        non_living_objects=[
+            'infinite damage cannon',
+            'retro video game console',
+            'memory register',
+            'active weapon payload slot',
+            'corrupted item',
+            'damage counter',
+            'health bars',
+            'odometer',
+            'legendary weapon'
+        ],
+        extras=[
+            'coding mistake visual symbol',
+            'system crash glitch effect',
+            'garbage data stream',
+            'numerical overflow numbers',
+            'digital folklore aura',
+            'light rays'
+        ]
+    ),
+    'selected_assets': ['furniture_kit_televisionVintage', 'furniture_kit_computerScreen'],
+    'missing_assets': [
+        'retro virtual world landscape',
+        'computational blind spot environment',
+        'digital sky',
+        'retro gaming world horizon',
+        'retro video game players',
+        'ordinary characters',
+        'screen-clearing powerhouses',
+        'game designers',
+        'infinite damage cannon',
+        'retro video game console',
+        'memory register',
+        'active weapon payload slot',
+        'corrupted item',
+        'damage counter',
+        'health bars',
+        'odometer',
+        'legendary weapon',
+        'coding mistake visual symbol',
+        'system crash glitch effect',
+        'garbage data stream',
+        'numerical overflow numbers',
+        'digital folklore aura',
+        'light rays'
+    ],
+    'assets': AssetDescBatch(
+        assets=[
+            AssetDesc(
+                asset_id='retro_virtual_world_landscape_01',
+                name='Retro Virtual World Landscape',
+                category='environment',
+                asset_type='3d_model',
+                visual_description='A stylized 3D retro virtual landscape featuring vibrant grass banks with broad soft color variations, sparse hand-drawn tufts, and 
+a winding river with dynamic data-textured water marks. The entire environment is characterized by hand-painted textures, saturated green and earthy tones, warm key 
+lighting, blue-purple shadows, and distinct thin black ink outlines on all 3D geometry edges and creases.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='computational_blind_spot_environment_01',
+                name='Computational Blind Spot Environment',
+                category='environment',
+                asset_type='3d_model',
+                visual_description='An abstract stylized environment featuring stark geometric architectural forms and flat-lit surfaces designed for testing lighting 
+discrepancies and ink outline boundaries. The silhouette consists of minimalist structural blocks and planar backdrops with sharp silhouettes and clean alpha-tested 
+card cutouts. Proportions are calibrated for architectural scale with precise spacing to evaluate shadow softness, two-tone cast shadows, and foreground depth of 
+field. Materials are matte and non-reflective, completely lacking ambient occlusion darkening, grime, or SSAO effects. The color palette utilizes flat daytime lighting
+values with high-contrast black ink lines tracing the 3D world geometry, maintaining a clean vector-like graphical aesthetic.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='digital_sky_env_01',
+                name='Digital Sky',
+                category='environment',
+                asset_type='procedural',
+                visual_description='A procedural dome environment background featuring a 4-stop elevation-based sky gradient shader. The day preset transitions 
+vertically from a bright top color of #3d95ee and #4284d3 down through soft blue stops to a horizon color of #c9cdee, maintaining a muted chroma of C* 22-29. The 
+golden hour preset shifts through dusty mauve, coral, and lilac tones with horizon colors of #ffd08a, incorporating smooth atmospheric scattering curves and integrated
+fog parameters.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='retro_gaming_world_horizon_env',
+                name='Retro Gaming World Horizon',
+                category='environment',
+                asset_type='3d_model',
+                visual_description='A wide stylized retro gaming horizon featuring a multi-stop gradient sky transitioning from deep upper blue (#5e93d9/#3d95ee) down 
+to a pale horizon, paired with a procedural river water plane displaying cyan-to-deep depression-angle gradients, sparse horizontal crest and trough marks, and dynamic
+glints. Includes atmospheric fog blending the skyline towards pale grey-beige, lit deck planks with high-contrast narrow gaps and lit lips, and atmospheric atmospheric
+depth parameters suitable for stylized retro landscapes.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='retro_video_game_players_01',
+                name='Retro Video Game Players',
+                category='living_objects',
+                asset_type='3d_model',
+                visual_description='Stylized retro human character silhouettes with distinct head-to-body proportions, featuring low-poly blocky geometry and fitted 
+contour head shapes. The figures include articulated limbs capable of procedural head loll animations, subtle bobbing motions, and interacting poses with handheld 
+props. Materials consist of matte flat-shaded surfaces with procedural toon textures, earthy color palettes inspired by classic arcade aesthetics, and clean edge 
+outlines suitable for real-time rendering.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='ordinary_characters_01',
+                name='Ordinary Characters',
+                category='living_objects',
+                asset_type='3d_model',
+                visual_description='A diverse set of stylized human character models including adults, stout variants, and kids featuring distinct proportional builds 
+with torso and leg multipliers, clean stylized silhouettes, smooth matte surfaces with subtle fabric and leather textures, and a harmonious color palette suitable for 
+procedural generation and animation.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='screen_clearing_powerhouses_01',
+                name='Screen-Clearing Powerhouses',
+                category='living_objects',
+                asset_type='3d_model',
+                visual_description='Powerful living entities featuring a stylized, bulky silhouette with heavy organic proportions, designed for screen-clearing 
+impact. The surface combines dense organic skin textures with sharp inked crease lines and stylized outlines measuring under 2px wide. Materials utilize high-frequency
+detail maps including cobble and metallic surface elements blended with linear light shading (#221f2e at strength 0.92) to maintain a distinct grey core luma between 
+60 and 80. Distinctive features include clean contact outlines, robust scaling conforming to 128-256 pixels per meter density guidelines, and smooth fade transitions 
+suited for dynamic particle integration.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='game_designers_01',
+                name='Game Designers',
+                category='living_objects',
+                asset_type='3d_model',
+                visual_description='A stylized human character representing a game designer featuring a medium build, casual modern attire with layered flannel and 
+denim, expressive facial features, and a posture leaning forward thoughtfully. The silhouette is balanced with characteristic accessories like a modern headset and 
+lanyard, utilizing procedural canvas-textured materials with soft matte shaders, warm color palettes, and clean low-poly proportions suitable for a stylized 
+interactive environment.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='infinite_damage_cannon_001',
+                name='Infinite Damage Cannon',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='Massive, highly ornate futuristic heavy artillery piece featuring an exaggerated, elongated dual-layered barrel silhouette with 
+glowing plasma channels. Proportions are top-heavy with a reinforced stabilizing chassis and heavy mechanical bracing. Surface materials consist of dark, 
+matte-charcoal industrial steel contrasted with high-emission cyan energy cores and brass-accented pressure valves. Designed with clean, hard-surface geometry suitable
+for cel-shaded outlining, while auxiliary particle emitters and smoke vents are designated for non-ink rendering layers.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='non_living_retro_video_game_console_01',
+                name='Retro Video Game Console',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='A chunky, nostalgic 1980s video game console featuring a rectangular blocky silhouette with sloping top edges, wide horizontal 
+ventilation grilles, and tactile mechanical toggle switches. Proportions are compact and boxy, accented by two circular ports for wired controllers on the front face 
+and a cartridge slot on the top surface. The materials are matte textured retro-grey plastic with hand-painted wear and scuffs, complemented by thin black ink outlines
+along all edges and creases to match a stylized toon aesthetic. Colors consist of desaturated warm grey base tones with saturated accent colors on the power light and 
+buttons, designed to receive warm key lighting and blue-purple environmental shadows.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='memory_register_01',
+                name='Memory Register',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='A rectangular, boxy electronic component silhouette with low-profile geometric proportions, featuring an arrangement of tiny 
+metallic contact pins along the base and precise grid-like surface etchings. The material is matte dark green or black circuit board substrate paired with brushed 
+silver and copper alloy contacts. Key details include embossed micro-chip numbering, neat soldered joint accents, and a stylized alpha-tested silk-screened label on 
+top. The visual style is clean, technical, and optimized for real-time rendering with crisp outlines and compatibility with world normal passes.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='active_weapon_payload_slot_001',
+                name='Active Weapon Payload Slot',
+                category='non_living_objects',
+                asset_type='procedural',
+                visual_description='An industrial mechanical payload mount featuring a rigid rectangular silhouette with recessed mounting tracks and interlocking 
+locking clamps. Proportions are compact and geometric, designed to house tactical equipment securely. The surface is constructed from heavy-duty dark iron and 
+pewter-finished steel, highlighted by accented painted alignment lines in pale cream (#f1efe6) and a dark ink outline (#241726) following cel-shaded render guidelines.
+Designed with clean modular interfaces for procedural generation and universal reuse.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='corrupted_item_01',
+                name='Corrupted Item',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='An anomalous, distorted object featuring a jagged, glitching silhouette with asymmetric proportions and fragmented geometry. The 
+surface exhibits erratic texture corruption, combining metallic and stone atlases with sharp color bleeding and emissive digital artifact highlights. Designed with 
+stylized low-poly deformation suited for normal-mapped procedural rendering pipelines.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='non_living_objects_damage_counter_01',
+                name='Damage Counter',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='A compact mechanical damage counter featuring a rectangular, metallic chassis with rounded edges and proportions slightly wider 
+than they are tall. The silhouette includes two rotating numerical drum dials on the front face, a grooved adjustment thumbwheel on the side, and a clear protective 
+acrylic viewing window over the digits. Materials consist of matte industrial steel casing with worn edges, weathered brass numeric dials displaying embossed 
+high-contrast white digits, and subtle scuff details on the surface. Colors are primarily gunmetal grey, brass gold, and stark white markings, designed in a realistic,
+utilitarian game-asset style.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='health_bars_01',
+                name='Health Bars',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='Camera-facing HUD billboard health bar rendered as a clean rectangular card assigned to the NOINK layer to prevent black outlines. 
+Features a stark horizontal progress meter with crisp proportions, vibrant green and dark red color zones indicating status, a semi-transparent dark backing container,
+and flat stylized graphics without complex shading.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='non_living_objects_odometer_01',
+                name='Odometer',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='Vintage mechanical odometer with a circular metal casing, featuring a glass lens face, polished brass rim bezel, and internal 
+rotating numeric roller drums displaying distance digits. The proportions are compact and cylindrical with an attached mounting bracket. Materials consist of aged 
+brushed steel, polished brass, and glossy glass. Colors feature a dark charcoal grey body, metallic gold highlights, and contrasting white digits on black rollers.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='legendary_weapon_001',
+                name='Legendary Weapon',
+                category='non_living_objects',
+                asset_type='3d_model',
+                visual_description='An ornate legendary sword with an elongated, slender silhouette and intricate crossguard featuring ancient mythical engravings. 
+Proportions are balanced for a ceremonial yet combat-ready appearance. The blade is forged from polished celestial steel with subtle glowing runic grooves, while the 
+grip is wrapped in dark, weathered leather and accented with a luminous gemstone set into the pommel. Materials feature high-contrast metallic sheens and detailed 
+normal maps. Colors consist of cool silver, deep charcoal leather, and glowing gold and amber highlights suited for stylized fantasy environments.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='coding_mistake_visual_symbol_01',
+                name='Coding Mistake Visual Symbol',
+                category='extras',
+                asset_type='2d_graphic',
+                visual_description='A flat 2D graphic symbol representing a coding mistake, featuring a stylized expression with blush cheeks in a soft peach-orange 
+tone (#f3aa98), dot eyes with crisp white catchlight highlights, and a muted grey-brown shaded silhouette (#ae9786) with over-orange golden accents (#bd7c48, #a46d41).
+The asset has a pasted-on look enhanced by a subtle emissive glow of 0.36.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='system_crash_glitch_effect_01',
+                name='System Crash Glitch Effect',
+                category='extras',
+                asset_type='vfx',
+                visual_description='A dynamic post-processing glitch and motion smear effect featuring horizontal whip-blur displacement, chromatic aberration lines, 
+and distorted pixel slices. The silhouette is screen-space covering with high-frequency scanline distortions and directional velocity smears ranging across 45-93 
+pixels per frame. Materials and colors mimic digital signal corruption with harsh RGB color splitting, glowing neon highlights, and deep shadow dropouts. It is highly 
+reusable for cinematic transitions, system failure sequences, and cyberpunk visual overlays.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='garbage_data_stream_01',
+                name='Garbage Data Stream',
+                category='extras',
+                asset_type='vfx',
+                visual_description='A dynamic stream of digital garbage data represented as thin, chaotic glyphs and fragmented artifacts flowing along a procedural 
+vector path. The silhouette features irregular cascading lines and small dashes with high-frequency surface noise. Proportions scale dynamically with dense micro-lines
+and sparse ambient particle fields. Materials consist of glowing emissive neon green and matrix blue textures mapped onto anisotropic planar ribbons, displaying sharp 
+contrast against a dark digital void. The visual style is cybernetic, glitch-art inspired, with high readability and crisp digital edges.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='numerical_overflow_numbers_01',
+                name='Numerical Overflow Numbers',
+                category='extras',
+                asset_type='3d_model',
+                visual_description='Floating volumetric numerical overflow digits featuring a crisp, high-contrast silhouette with sharp edges and non-blooming white 
+surfaces. Proportions are standardized with a clear typography style, maintaining high legibility and precise depth ordering. The material is matte white with zero 
+emissive glow, casting sharp outlines against rendered environments with distinct edge widths proportional to 1080p framing.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='digital_folklore_aura_01',
+                name='digital folklore aura',
+                category='extras',
+                asset_type='vfx',
+                visual_description='An ethereal procedural aura effect featuring dynamic layered volumetric clouds with multi-layered soft blur lobes, glowing 
+celestial gradients of ethereal gold and daylight blue, and integrated screen-space ink outline properties with continuous anti-aliased edge detection.',
+                reusable=True
+            ),
+            AssetDesc(
+                asset_id='light_rays_bloom_01',
+                name='Light Rays and Glow Effect',
+                category='extras',
+                asset_type='vfx',
+                visual_description='Volumetric light rays and atmospheric glow effect featuring high-dynamic-range emissive sources with an additive flat halo sprite 
+silhouette. Proportioned with a soft radial falloff and tuned bloom parameters, the asset exhibits crisp white core intensities reaching near unity, paired with smooth
+luminance smoothing and mipmap blur. Materials utilize additive blending with depthWrite disabled, rendering glowing atmospheric shafts, ambient haze, and 
+high-intensity particle sparks in a stylized photographic golden-hour style.',
+                reusable=True
+            )
+        ]
+    )
+}

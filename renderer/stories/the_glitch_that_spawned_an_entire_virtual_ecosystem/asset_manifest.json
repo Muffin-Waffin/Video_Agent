@@ -1,0 +1,173 @@
+{
+  "story_id": "the_glitch_that_spawned_an_entire_virtual_ecosystem",
+  "assets": {
+    "env_sky_01": {
+      "asset_id": "env_sky_01",
+      "name": "Sky and Atmosphere Dome",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/env_sky_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A hemispherical atmospheric dome providing gradient skyboxes for day and golden hour lighting conditions. The day silhouette features a 4-stop vertical gradient ranging from pale icy blue (#d8ecf7) at the horizon to deep vibrant blue (#2a7fe6) at the zenith, paired with a matching blue-tinted distance fog. The golden hour variant displays a warm gradient shifting from soft peach and yellow (#ffd08a, #ffad7e) through dusty mauve and pink to deep twilight violet (#8c78c4) at the top, accompanied by warm peach-toned atmospheric haze and a prominent golden sun glow."
+      }
+    },
+    "terrain_environment_01": {
+      "asset_id": "terrain_environment_01",
+      "name": "Terrain",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/terrain_environment_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Procedurally textured terrain asset featuring organic landscape elements, specifically detailed grass banks and river water data textures. The silhouette is expansive and undulating with natural topography. Proportions adhere to high-density texel ratios of 256 texels per meter, ensuring crisp surface fidelity. Materials include vibrant saturated lawns featuring broad soft color variations in shades of green (hex #73b23d, #8cc650, #5c9a30), sparse tufts, subtle low-frequency noise, and integrated river data textures mapping crests, troughs, and glints as short randomized arcs. The visual style is realistic, optimized for high-performance rendering with high-resolution texture mapping and anisotropic filtering support."
+      }
+    },
+    "test_environment_room_001": {
+      "asset_id": "test_environment_room_001",
+      "name": "Test Environment Room",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/test_environment_room_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An enclosed test environment room with boxy proportions, featuring standard walls, a floor, and an overhead bare bulb casting a pool of light. The silhouette is defined by sharp internal angles and clean planar surfaces, outlined with distinct black ink lines. Materials consist of matte plastered walls with subtle color patches, a plain floor, and a warm glowing light fixture. The visual style combines stylized toon-shading with clear black outlines, optimized for a standalone toy test harness scene."
+      }
+    },
+    "stock_market_trading_floor_001": {
+      "asset_id": "stock_market_trading_floor_001",
+      "name": "stock market trading floor",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/stock_market_trading_floor_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A bustling 3D toon trading floor environment featuring hand-painted textures with saturated colors and thin black ink outlines on all geometry edges and creases. The silhouette encompasses clustered ergonomic desk terminals, tiered computer monitors displaying glowing charts, hanging overhead bare bulbs casting pools of light, and scattered financial papers. Proportions are slightly stylized with chunky hardware and dramatic scale to emphasize the chaotic energy. Materials feature warm sunlit wooden planks and matte metallic surfaces. The color palette utilizes warm key lights contrasted with deep blue and purple shadows, with high saturation matching cartoon cinematic standards."
+      }
+    },
+    "polygon_avatars_001": {
+      "asset_id": "polygon_avatars_001",
+      "name": "Polygon Avatars",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/polygon_avatars_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Stylized low-poly human avatars featuring distinct geometric silhouettes including officer, rifleman, kid, and townsperson types. Proportions are standardized around consistent head heights with fitted contour lines and clear facial definitions. Constructed with flat-shaded polygonal meshes, utilizing custom painted crescent textures for facial forms, and lit via controlled luma gradients with bright diffuse shading. Materials combine matte fabric colors with emissive intensity tweaks to maintain vibrant visibility in both lit and shaded conditions."
+      }
+    },
+    "living_objects_npcs_01": {
+      "asset_id": "living_objects_npcs_01",
+      "name": "NPC Character Set",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/living_objects_npcs_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Stylized NPC character set including adult, stout, and kid variants with distinct proportions. Silhouette features fitted contour heads with elliptical guidelines, standardized head-height scaling, and modular body parts supporting march, stroll, stand, sit, fall, and dress animations. Materials utilize surface atlases with stylized textures like wood, stone, and cloth. Visual style is clean and geometric, matching the toon harness specifications with consistent lighting and facing controls."
+      }
+    },
+    "game_developers_01": {
+      "asset_id": "game_developers_01",
+      "name": "Game Developers",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/game_developers_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Stylized human character figures representing game developers, featuring a relaxed seated or standing silhouette, standard bipedal human proportions, dressed in casual everyday attire such as hoodies and t-shirts with matte fabric materials, wearing glasses and headphones as key details, rendered in a clean semi-realistic visual style with vibrant muted colors."
+      }
+    },
+    "tiny_digital_shapes_01": {
+      "asset_id": "tiny_digital_shapes_01",
+      "name": "Tiny Digital Shapes",
+      "category": "non_living_objects",
+      "asset_type": "2d_graphic",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/tiny_digital_shapes_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A collection of tiny procedural digital shapes featuring clustered circular lobes arranged in multi-layered rows with crowns. The silhouette is organic yet structured, utilizing overlapping blurred circles and smooth contours. Surface details include subtle internal gradients with lighter top-left highlights and darker bottom-right shading. Colors are based on pastel and neutral palettes with soft alpha blending, maintaining intact outlines and clean separation."
+      }
+    },
+    "polished_stones_01": {
+      "asset_id": "polished_stones_01",
+      "name": "Polished Stones",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/polished_stones_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Smooth, rounded pebble silhouettes with soft low-profile proportions, featuring distinct warm lit faces colored #bf9d7f and cool shade faces colored #745a55 with almost no visible internal lines. The surface features sparse cream pebble dabs and subtle texture variation, maintaining a clean stylized painterly appearance suitable for ground scattering and shorelines."
+      }
+    },
+    "stock_market_ticker_board_01": {
+      "asset_id": "stock_market_ticker_board_01",
+      "name": "Stock Market Ticker Board",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/stock_market_ticker_board_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A large, rectangular financial information display board featuring a rigid plank-built housing structure with a dark wood finish and recessed dark brown gaps. The front face consists of multiple horizontal rows organized with modular display panels, featuring glowing alphanumeric character patches for stock symbols and prices, utilizing high-contrast retro digital fonts. The surface integrates distinct watermark maps, row-median strips for separation, and dedicated camera-facing billboard layers excluded from ink outlines. Materials combine matte dark timber frames with emissive amber and green character displays."
+      }
+    },
+    "inventory_script_terminal_01": {
+      "asset_id": "inventory_script_terminal_01",
+      "name": "Inventory Script Terminal",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/inventory_script_terminal_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A sci-fi computer terminal with a rectangular upright console silhouette, featuring an angled glowing green screen at the top, a bulky physical keyboard layout with tactile rubberized keys in the center, and a heavy metallic base casing. Proportions are top-heavy with a wide monitor section sloping down to a slightly recessed control deck. Materials consist of matte dark gray brushed aluminum for the outer shell, glossy dark glass for the monitor bezels, and emissive neon green UI lines on the display. Surface details include indented panel lines, small status indicator LED lights, and visible heat ventilation grates on the back panel. The visual style is retro-futuristic cyberpunk with clean hard-surface geometry and high contrast luminescence."
+      }
+    },
+    "sun_shaft_light_rays_01": {
+      "asset_id": "sun_shaft_light_rays_01",
+      "name": "Sun Shaft Light Rays",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/sun_shaft_light_rays_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Volumetric vertical light rays and dust-filled atmospheric shafts entering from an upper side angle (azimuth 75, elevation 48). Features soft, semi-transparent gradient planes with feathered edges (3-12 px soft drop-off), glowing pale yellow-white highlights blending into ambient haze, and faint internal particulate variations suitable for atmospheric interior or exterior scene backdrops."
+      }
+    },
+    "dust_particles_01": {
+      "asset_id": "dust_particles_01",
+      "name": "Dust Particles",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/dust_particles_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Scattered micro-particles forming subtle, floating camera-facing cards configured to ignore world ink outlines with transparent layering, featuring soft, glowing translucent specks in warm amber and pale white tones for atmospheric depth."
+      }
+    },
+    "code_error_math_symbols_01": {
+      "asset_id": "code_error_math_symbols_01",
+      "name": "Code Error Math Symbols",
+      "category": "extras",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_spawned_an_entire_virtual_ecosystem/assets/code_error_math_symbols_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A collection of floating 3D mathematical symbols and syntax icons representing coding errors, featuring sharp extruded geometry, glowing red and warning orange emissive edges, metallic dark gray surfaces with subtle procedural surface scratches, and clean geometric proportions suitable for technical UI overlays."
+      }
+    }
+  }
+}

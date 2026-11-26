@@ -1,0 +1,281 @@
+{
+  "story_id": "the_glitch_that_accidentally_invented_open_world_gaming",
+  "assets": {
+    "nature_kit_ground_grass": {
+      "asset_id": "nature_kit_ground_grass",
+      "name": "nature_kit_ground_grass",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/nature_kit_ground_grass",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "furniture_kit_computerScreen": {
+      "asset_id": "furniture_kit_computerScreen",
+      "name": "furniture_kit_computerScreen",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "assets/furniture_kit_computerScreen",
+      "reusable": true,
+      "metadata": {
+        "source": "catalogue",
+        "pack": ""
+      }
+    },
+    "env_sky_procedural_01": {
+      "asset_id": "env_sky_procedural_01",
+      "name": "Dynamic Procedural Sky",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/env_sky_procedural_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A hemispherical gradient sky shader with smooth elevation-based color stops transitioning from a bright zenith to a hazy horizon. Features dynamic day and golden hour presets, incorporating a 4-stop interpolation curve for the day configuration (ranging from pale ice blue #d8ecf7 at the top to vibrant azure #2a7fe6 at the horizon) and a rich sunset configuration (transitioning from deep twilight purple #443876 through dusty mauve to warm golden peach #ffd08a). Integrated with distance fog gradients and atmospheric scattering haze to simulate realistic outdoor lighting conditions."
+      }
+    },
+    "blank_void_env_01": {
+      "asset_id": "blank_void_env_01",
+      "name": "Blank Void",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/blank_void_env_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An infinite, minimalist environment void featuring a completely flat, non-reflective horizon with zero ambient occlusion or SSAO darkening. The silhouette is expansive and open, devoid of traditional geometry except for precise, stylized ink line outlines and two-tone cast shadows. The color palette relies on neutral, shadowless base planes complemented by stark black illustrative lines and crisp alpha-tested cut-outs. Materials are matte and purely graphic-driven, prioritizing clean silhouettes and sharp outlines over realistic PBR textures."
+      }
+    },
+    "env_voxel_mountains_01": {
+      "asset_id": "env_voxel_mountains_01",
+      "name": "Voxel Mountains",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/env_voxel_mountains_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Blocky voxel-based mountain range featuring layered volumetric silhouettes, steep rocky slopes constructed from low-resolution cubic blocks, and a fading distance gradient blending into a dark atmospheric core (#221f2e). Proportions are expansive with jagged peaks, tiered ridges, and textured surfaces mapped with procedural stone and sparse moss blocks. Color palette consists of earthy greys, deep charcoal shadows, and distant atmospheric haze. Highly reusable for stylized block-world environments and distant terrain backdrops."
+      }
+    },
+    "env_green_plains_01": {
+      "asset_id": "env_green_plains_01",
+      "name": "Green Plains",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/env_green_plains_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Vast flat green plains featuring a saturated grassy bank silhouette with soft broad color variations between hex #71b038 and #7dbf3f, dotted with sparse tufts and tiny wildflowers. The terrain integrates flat landscape features with smooth gradient texturing, broad spatial autocorrelation, and low fine noise. Optimized for procedural canvas generation with vibrant daylight color profiles and natural organic distribution."
+      }
+    },
+    "curved_horizon_env_01": {
+      "asset_id": "curved_horizon_env_01",
+      "name": "Curved Horizon",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/curved_horizon_env_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A vast environmental backdrop featuring a curved horizon with a multi-layered sky shader gradient transitioning smoothly from near to far elevation angles. The terrain incorporates dynamic water surfaces with procedural texture mapping for crests, troughs, and glints, utilizing custom fragment shaders for atmospheric depth and lighting."
+      }
+    },
+    "infinite_wilderness_env_01": {
+      "asset_id": "infinite_wilderness_env_01",
+      "name": "Infinite Wilderness Environment",
+      "category": "environment",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/infinite_wilderness_env_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "An expansive open wilderness procedural environment featuring flat, saturated green grass banks with broad soft variations and sparse tufts, bounded by dynamic water surfaces with randomized water mark data textures, arcs, and glints, under a volumetric multi-layered cloud sky with smooth lobe gradients and varied day or golden hour palettes."
+      }
+    },
+    "modern_game_studio_01": {
+      "asset_id": "modern_game_studio_01",
+      "name": "Modern Game Studio",
+      "category": "environment",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/modern_game_studio_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A stylized 3D environment asset representing a modern game studio interior featuring hand-painted textures, saturated colors, and characteristic thin black ink outlines on all 3D geometry edges and creases. The silhouette comprises modular architectural elements, desk clusters with computers, and decorative props with soft depth of field background elements. Surfaces display detailed hand-painted wood planks and stone block textures with warm key lighting and contrasting blue-purple ambient shadows."
+      }
+    },
+    "game_developers_01": {
+      "asset_id": "game_developers_01",
+      "name": "Game Developers",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/game_developers_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Stylized human character figures representing game developers, featuring a casual silhouette with relaxed posture, wearing hoodies and jeans. Proportions are slightly stylized with friendly facial features and glasses. Materials use matte fabrics, subtle cotton textures, and smooth skin shaders. Colors include earthy and neutral tones combined with vibrant accent clothing. Reusable for environment population and developer-themed scenes."
+      }
+    },
+    "game_designers_001": {
+      "asset_id": "game_designers_001",
+      "name": "Game Designers",
+      "category": "living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/game_designers_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Stylized human character silhouette representing a game designer with casual modern proportions, wearing layered everyday clothing like a hoodie and jeans, featuring detailed organic textures, soft matte fabric materials, and expressive posture suitable for animation and procedural generation."
+      }
+    },
+    "non_living_objects_mainframe_001": {
+      "asset_id": "non_living_objects_mainframe_001",
+      "name": "Mainframe",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/non_living_objects_mainframe_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A large, rectangular industrial server rack silhouette with towering vertical proportions, featuring grid ventilation panels on the front and back doors, recessed indented seams, glowing blue and amber status LED indicator strips, and dense cabling ports along the bottom base. Material consists of matte dark charcoal powder-coated steel with brushed aluminum trim edges. The visual style is clean, sci-fi industrial with subtle wear and dust details."
+      }
+    },
+    "copper_tracks_01": {
+      "asset_id": "copper_tracks_01",
+      "name": "Copper Tracks",
+      "category": "non_living_objects",
+      "asset_type": "procedural",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/copper_tracks_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Parallel elongated copper tracks featuring flat metallic strip silhouettes with integrated subtle lit and shaded bevel lips along the edges. The proportion is wide with controlled pitch spacing. The material exhibits a polished metallic copper finish using blue-grey and warm highlights matching a metallic matcap style, maintaining high luminance floors and avoiding pure black gaps in the surface grain."
+      }
+    },
+    "non_living_objects_register_01": {
+      "asset_id": "non_living_objects_register_01",
+      "name": "register",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/non_living_objects_register_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A vintage mechanical cash register featuring a bulky, stepped rectangular silhouette with rounded corners and a prominent mechanical drawer base. Proportions are compact and heavy-set, including a raised upper display housing, numerical key rows with visible spacing, and a side-mounted hand crank lever. Materials and surface details feature worn metallic casing with matte-painted metal finishes, slightly reflective chrome keys, and an embossed surface texture. Colors consist of muted dark iron grey and antiqued brass accents, styled for a stylized cel-shaded or line-art friendly world with clean contours suitable for normal-pass rendering."
+      }
+    },
+    "non_living_graphics_card_01": {
+      "asset_id": "non_living_graphics_card_01",
+      "name": "Graphics Card",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/non_living_graphics_card_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A high-detail 3D modern desktop graphics processing unit with a rectangular, low-profile boxy silhouette. Features a dual or triple axial fan shroud with embossed geometric ridges, a dark gunmetal grey and matte black metallic finish, an exposed copper heat pipe array along the side, and a metallic silver backplate with engraved branding details. Includes precise cut-outs and standard PCIe gold edge connector pins at the base. Optimized for stylized real-time rendering with clean silhouette boundaries and PBR material compatibility."
+      }
+    },
+    "non_living_objects_calculator_001": {
+      "asset_id": "non_living_objects_calculator_001",
+      "name": "calculator",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/non_living_objects_calculator_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A handheld electronic calculator featuring a rectangular plastic body with slightly curved ergonomic edges and a wedge-shaped profile, thicker at the bottom base. It includes a wide rectangular monochrome LCD screen at the top portion and a grid of rubberized tactile push buttons arranged in neat rows and columns below, featuring distinct color groupings for numeric keys, operational functions, and the clear/power buttons. The surface material is matte dark gray or brushed metallic plastic with subtle bevels. Highly reusable as an office desk prop or school supply element."
+      }
+    },
+    "non_living_objects_computer_01": {
+      "asset_id": "non_living_objects_computer_01",
+      "name": "Desktop Computer",
+      "category": "non_living_objects",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/non_living_objects_computer_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A retro-modern desktop computer featuring a chunky CRT monitor, a beige plastic CPU tower case with front-facing disk drives and power button, and a matching mechanical keyboard. The silhouette is boxy and angular with matte plastic surfaces, subtle panel seams, and no modern screen-space ambient occlusion. Colors consist of aged off-white and cool gray plastics with dark screen glass and colorful indicator LEDs."
+      }
+    },
+    "memory_request_surge_01": {
+      "asset_id": "memory_request_surge_01",
+      "name": "Memory Request Surge",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/memory_request_surge_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A dynamic computational vfx particle surge visualization featuring an abstract volumetric silhouette composed of dense clustered glowing nodes and procedural procedural glowing sprites. The proportions are wide and expansive with high-intensity HDR emissive particle cores emitting sharp sparks and soft volumetric halos. Materials utilize custom additive blending surfaces with high luminance thresholds, featuring fiery spark accents and bright white core points fading into soft chromatic gradients. The overall color palette consists of high-dynamic-range warm golden tones, intense glowing whites, and deep procedural texture elements designed for real-time procedural rendering stacks."
+      }
+    },
+    "data_loop_001": {
+      "asset_id": "data_loop_001",
+      "name": "data loop",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/data_loop_001.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A continuous procedural data loop visualization featuring glowing cyan and electric blue digital tracks, flowing in a circular trajectory with subtle particle emission, crisp vector-like alpha outlines, and smooth anti-aliased motion paths suitable for composite overlays."
+      }
+    },
+    "coordinate_buffer_01": {
+      "asset_id": "coordinate_buffer_01",
+      "name": "coordinate buffer",
+      "category": "extras",
+      "asset_type": "3d_model",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/coordinate_buffer_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A programmatic coordinate buffer featuring a flat, rounded-rectangle silhouette with subtle thick-thin ink contour rings and procedural blob distributions. The asset exhibits custom blending visual properties with layered render orders for seamless texture wrapping along the X and Y axes. The surface displays mathematical coordinate grids rendered in ink black and neutral tones, designed for precise spatial data caching and procedural visual effect stacking. The silhouette is geometric yet organic due to variable ink stroke thickness and noise offsets."
+      }
+    },
+    "fracture_effect_01": {
+      "asset_id": "fracture_effect_01",
+      "name": "Fracture Effect",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/fracture_effect_01.json",
+      "reusable": false,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Dynamic screen-space motion blur and post-processing fracture effect featuring sharp directional smearing, high-velocity streaks, and fragmented outlines. The silhouette displays jagged, broken edges with dynamic alpha cut-outs and depth-of-field separation. The material utilizes procedural GLSL-driven color accumulation, high-contrast ink masks, and directional velocity vectors. Colors are monochromatic or context-driven based on underlying render passes with vibrant streak highlights. The visual style is modern, cinematic, and non-reusable due to its customized procedural shader implementation."
+      }
+    },
+    "asset_sun_shaft_01": {
+      "asset_id": "asset_sun_shaft_01",
+      "name": "Sun Shaft",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/asset_sun_shaft_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "Volumetric atmospheric sun shaft with a camera-relative directional orientation (azimuth 75, elevation 48). Features strong volumetric beams cutting through environmental haze, casting distinct side-key highlights and high-contrast two-tone shade gradients. The silhouette consists of parallel atmospheric light bands tapering gently downward, interacting with dust particles and environmental fog near the ground. Colors incorporate bright warm sunlight tones blending into cool sky fill hues, with soft-edged gradients designed for non-photorealistic stylized rendering."
+      }
+    },
+    "light_patch_01": {
+      "asset_id": "light_patch_01",
+      "name": "light patch",
+      "category": "extras",
+      "asset_type": "vfx",
+      "file_path": "stories/the_glitch_that_accidentally_invented_open_world_gaming/assets/light_patch_01.json",
+      "reusable": true,
+      "metadata": {
+        "source": "generated_story_asset",
+        "visual_description": "A flat, ethereal additive sprite creating a glowing light halo effect. Features a soft-edged circular silhouette with a gaussian falloff texture, designed for atmospheric illumination and sun glare simulation. The material uses additive blending with depthWrite disabled and fog ignored, exhibiting bright emissive qualities scaling cleanly outward from a dense core to a transparent perimeter."
+      }
+    }
+  }
+}

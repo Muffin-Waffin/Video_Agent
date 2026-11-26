@@ -10,3 +10,5 @@ wheels/
 .venv
 .env
 claude-animated-shorts/
+entity_extraction
+renderer/public/bridge/kenny
