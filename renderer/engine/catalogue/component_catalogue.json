@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "import_base": "@engine",
+  "components": [
+    {
+      "name": "Environment",
+      "import_path": "@engine/components/Environment",
+      "description": "Root 3D scene container providing sky background, fog, ambient/hemisphere lighting, and terrain.",
+      "props": {
+        "background": { "type": "enum", "values": ["day", "sunset", "night", "overcast", "studio"], "default": "day", "required": false },
+        "terrain": { "type": "enum", "values": ["grass", "sand", "stone", "snow", "none"], "default": "grass", "required": false },
+        "fogDensity": { "type": "number", "default": 0, "required": false },
+        "ambientIntensity": { "type": "number", "default": 0.65, "required": false }
+      },
+      "example": "<Environment background=\"sunset\" terrain=\"grass\"><Sun /></Environment>"
+    },
+    {
+      "name": "Sun",
+      "import_path": "@engine/components/Sun",
+      "description": "Directional sun light with optional visible glowing sun sphere.",
+      "props": {
+        "position": { "type": "Vec3", "default": [10, 15, -10], "required": false },
+        "intensity": { "type": "number", "default": 1.2, "required": false },
+        "color": { "type": "string", "default": "#FFF3B0", "required": false },
+        "radius": { "type": "number", "default": 1.5, "required": false },
+        "showOrb": { "type": "boolean", "default": true, "required": false }
+      },
+      "example": "<Sun position={[10, 15, -5]} intensity={1.2} />"
+    },
+    {
+      "name": "Water",
+      "import_path": "@engine/components/Water",
+      "description": "Animated water surface for lakes, oceans, or rivers.",
+      "props": {
+        "position": { "type": "Vec3", "default": [0, 0.02, -5], "required": false },
+        "width": { "type": "number", "default": 20, "required": false },
+        "depth": { "type": "number", "default": 8, "required": false },
+        "style": { "type": "enum", "values": ["calm", "rippling", "river"], "default": "calm", "required": false },
+        "color": { "type": "string", "default": "#219EBC", "required": false },
+        "opacity": { "type": "number", "default": 0.82, "required": false }
+      },
+      "example": "<Water position={[0, 0.02, -5]} width={20} depth={8} style=\"calm\" />"
+    },
+    {
+      "name": "Character",
+      "import_path": "@engine/components/Character",
+      "description": "Reusable articulated human character with variants and procedural animations.",
+      "props": {
+        "model": { "type": "enum", "values": ["default_human", "casual", "formal", "worker", "explorer"], "default": "default_human", "required": false },
+        "position": { "type": "Vec3", "default": [0, 0, 0], "required": false },
+        "rotation": { "type": "Vec3", "default": [0, 0, 0], "required": false },
+        "scale": { "type": "number", "default": 1, "required": false },
+        "animation": { "type": "enum", "values": ["idle", "walk", "run", "interact", "talk", "wave"], "default": "idle", "required": false },
+        "shirtColor": { "type": "string", "default": null, "required": false },
+        "pantsColor": { "type": "string", "default": null, "required": false },
+        "skinColor": { "type": "string", "default": "#F4C29F", "required": false }
+      },
+      "animations": ["idle", "walk", "run", "interact", "talk", "wave"],
+      "example": "<Character model=\"default_human\" position={[0, 0, 0]} animation=\"walk\" />"
+    },
+    {
+      "name": "Prop",
+      "import_path": "@engine/components/Prop",
+      "description": "Reusable common 3D object (trees, rocks, buildings, furniture, monitors, boxes).",
+      "props": {
+        "kind": { "type": "enum", "values": ["tree", "rock", "house", "building", "desk", "monitor", "chair", "box"], "required": true },
+        "assetId": { "type": "string", "default": null, "required": false },
+        "position": { "type": "Vec3", "default": [0, 0, 0], "required": false },
+        "rotation": { "type": "Vec3", "default": [0, 0, 0], "required": false },
+        "scale": { "type": "number", "default": 1, "required": false },
+        "color": { "type": "string", "default": null, "required": false }
+      },
+      "example": "<Prop kind=\"tree\" position={[-3, 0, -2]} scale={1.2} />"
+    },
+    {
+      "name": "Particles",
+      "import_path": "@engine/effects/Particles",
+      "description": "Procedural 3D particle system for smoke, fire, explosions, glow, sparkles, and rain.",
+      "props": {
+        "kind": { "type": "enum", "values": ["smoke", "fire", "explosion", "glow", "sparkle", "rain"], "required": true },
+        "position": { "type": "Vec3", "default": [0, 0, 0], "required": false },
+        "count": { "type": "number", "default": 16, "required": false },
+        "spread": { "type": "number", "default": 1.5, "required": false },
+        "color": { "type": "string", "default": null, "required": false }
+      },
+      "example": "<Particles kind=\"fire\" position={[2, 0.5, 0]} count={20} />"
+    },
+    {
+      "name": "StoryRunner",
+      "import_path": "@engine/loader/StoryRunner",
+      "description": "Top-level Remotion sequence orchestrator for shots and transitions.",
+      "props": {
+        "storyId": { "type": "string", "required": true },
+        "title": { "type": "string", "required": true },
+        "shots": { "type": "ShotConfig[]", "required": true },
+        "renderShot": { "type": "(shot: ShotConfig, index: number) => React.ReactNode", "required": false }
+      },
+      "transitions": ["cut", "fade", "wipe_left", "wipe_right", "zoom_in"],
+      "example": "<StoryRunner storyId=\"demo\" title=\"Demo\" shots={shots} renderShot={(shot) => <ShotView shot={shot} />} />"
+    }
+  ]
+}
